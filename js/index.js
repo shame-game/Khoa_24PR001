@@ -19,6 +19,16 @@ vam('#c661412b2-iframe_click').addEventListener('click', () => {
         vam('.c661412b2-iframe').remove()
     })
 })
+
+document.querySelectorAll('.dieukien_bottom button').forEach((t) => {
+    t.onclick = () => {
+        vam('#popup').setAttribute('style', 'display:block')
+        vam('.background').onclick = () => {
+            vam('#popup').setAttribute('style', 'display:none')
+        }
+    }
+})
+
 window.addEventListener("scroll", function (event) {
 
     var scroll_y = this.scrollY;
