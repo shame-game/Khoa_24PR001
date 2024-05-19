@@ -6,6 +6,71 @@ const loginBtn = document.getElementById('login');
 const vam = document.querySelector.bind(document);
 const vams = document.querySelectorAll.bind(document);
 
+vams('.device_box-nav_con').forEach((t) => {
+    t.onclick = () => {
+        if (t.getAttribute('class') != 'device_box-nav_con acc') {
+            vam('.device_box-nav_con.acc').classList.remove('acc')
+            t.classList.add('acc')
+            if (t.getAttribute('index') == '1') {
+                vam('.contentdevice').innerHTML =
+                    `<h1>Ở vòng sơ loại</h1>
+                <div style="display: flex;align-items: start;padding: 10px 0;">
+                    <div class="iconvam"></div>
+                    <p style="flex: 1;">Các đội thi có thể sử dụng một hoặc nhiều phần cứng/phần
+                        mềm
+                        của các bộ giáo
+                        cụ AI Robotics của UBTECH trong sản phẩm AI Robotics của mình.</p>
+                </div>
+                <div style="display: flex;align-items: start;padding: 10px 0;">
+                    <div class="iconvam"></div>
+                    <p style="flex: 1;">Các đội thi được phép bổ sung phần cứng của mình bằng các vật
+                        liệu thông
+                        thường của nhà sản xuất hoặc các vật phẩm khác, chẳng hạn như vật liệu cắt laser
+                        hoặc vật liệu in 3D.</p>
+                </div>
+                <div style="display: flex;align-items: start;padding: 10px 0;">
+                    <div class="iconvam"></div>
+                    <p style="flex: 1;">Về nguyên tắc, không có hạn chế nào đối với việc sử dụng các
+                        thiết bị kết hợp
+                        với các bộ giáo cụ AI Robotics của UBTECH, ngoài những thiết bị gây ô nhiễm môi
+                        trường và có hại cho sức khỏe hoặc an toàn xã hội.</p>
+                </div>`
+                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1_HRStlHrVNI8vACYJ3PsJRJ0GMftksd2'
+            }
+            else if (t.getAttribute('index') == '2') {
+                vam('.contentdevice').innerHTML =
+                    `<div style="text-align: justify;" class="contentdevice">
+                <h1>Ở vòng chung kết</h1>
+                <div style="display: flex;align-items: start;padding: 10px 0;">
+                    <div class="iconvam"></div>
+                    <p style="flex: 1;">Mô hình Robot AI của các đội thi chỉ được phép sử dụng các thiết bị có trong các bộ giáo cụ AI Robotics của UBTECH và phải thỏa giới hạn kích thước cho phép.</p>
+                </div>
+                <div style="display: flex;align-items: start;padding: 10px 0;">
+                    <div class="iconvam"></div>
+                    <p style="flex: 1;">Các đội thi cần phải chuẩn bị và đem theo tất cả các thiết bị cần thiết như bộ công cụ, phần mềm, máy tính xách tay hoặc máy tính bảng, các đồ phụ tùng (thiết bị thay thế) trong ngày thi đấu.</p>
+                </div>
+                <div style="display: flex;align-items: start;padding: 10px 0;">
+                    <div class="iconvam"></div>
+                    <p style="flex: 1;">Ban tổ chức không chịu trách nhiệm bảo trì hay thay thế các thiết bị có sự cố hay hư hỏng.</p>
+                </div>
+            </div>`
+                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1uw-X2MhNexYelm9vAtWBamQgB6iswvee'
+            }
+            else if (t.getAttribute('index') == '3') {
+                vam('.contentdevice').innerHTML =
+                    `<div style="text-align: justify;" class="contentdevice">
+                <h1>Riêng ở bảng C Đặc biệt</h1>
+                <div style="display: flex;align-items: start;padding: 10px 0;">
+                    <div class="iconvam"></div>
+                    <p style="flex: 1;">Các đội thi phải sử dụng Robot AI hình người Yanshee ở cả hai Vòng sơ loại và Vòng chung kết. Điều này cũng tạo nên điểm khác biệt nổi bật của Cuộc thi ROBO G 2024 là đấu trường AI đầu tiên tại Việt Nam sử dụng Robot hình người.</p>
+                </div>
+            </div>`
+                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1CfLp_HOE8JsiwtmhsL4Ev5SInMCMbwB-'
+            }
+        }
+    }
+})
+
 /* #c661412b2 */
 vam('#c661412b2-iframe_click').addEventListener('click', () => {
     vam('.c661412b2-background_click').setAttribute('style', 'display:flex')
