@@ -93,7 +93,31 @@ document.querySelectorAll('.dieukien_bottom button').forEach((t) => {
         }
     }
 })
+const intromain =
+    `<div class="intro">
+        <div class="intrologo">
+            <div class="introlofogen">
+                <img src="https://lh3.googleusercontent.com/d/1PE-EtRbgsb7dBK3iPHG6INK8GPE4r1AZ">
+            </div>
+            <div class="intrologo-hiden">
+                <h2>RoBo G</h2>
+                <p> Việt Nam </p><span>2024</span>
+            </div>
+        </div>
+        <div class="introone"></div>
+    </div>`;
 
+window.onload = () => {
+    vam('.loadweb').remove();
+    vam('#mainintro').innerHTML = intromain
+    vam('.vam_title2').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
+    vam('#intro_link').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
+    vam('#intro_content').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
+    vam('#intro_logo').setAttribute('style', 'animation: introbanner .8s 1.3s linear forwards;')
+    setTimeout(() => {
+        vam('.intro').remove()
+    }, 2500)
+};
 window.addEventListener("scroll", function (event) {
 
     var scroll_y = this.scrollY;
@@ -237,11 +261,11 @@ fetchSheet
         rows.forEach((t) => {
             r +=
                 `<div class="question_div" index="${i}">
-                    <p class="vam_content">${t['Câu hỏi']}</p>
+                    <p class="vam_content1">${t['Câu hỏi']}</p>
                     <i class="bi bi-arrow-up-circle-fill"></i>
                 </div>
                 <div class="question_load" index="${i}">
-                    <p class="vam_content">${t['Câu trả lời']}</p>
+                    <p class="vam_content1">${t['Câu trả lời']}</p>
                 </div>`
             i++
         })
