@@ -742,6 +742,7 @@ body {
 .introd-vam_boxwrap p {
     font-size: 18px;
     color: rgb(123, 128, 154);
+    text-align: justify;
 }
 
 
@@ -1080,7 +1081,7 @@ body {
 
 .scroll-td_content p {
     text-align: justify;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--color-p);
 }
 
