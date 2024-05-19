@@ -348,10 +348,15 @@ const intromain =
 window.onload = () => {
     vam('.loadweb').remove();
     vam('#mainintro').innerHTML = intromain
+    vam('body').setAttribute('style', 'overflow: hidden;')
     vam('.vam_title2').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     vam('#intro_link').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     vam('#intro_content').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     vam('#intro_logo').setAttribute('style', 'animation: introbanner .8s 1.3s linear forwards;')
+
+    setTimeout(() => {
+        vam('body').setAttribute('style', 'overflow:auto')
+    }, 2000)
     setTimeout(() => {
         vam('.intro').remove()
     }, 2500)
