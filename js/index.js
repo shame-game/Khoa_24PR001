@@ -35,7 +35,7 @@ vams('.device_box-nav_con').forEach((t) => {
                         với các bộ giáo cụ AI Robotics của UBTECH, ngoài những thiết bị gây ô nhiễm môi
                         trường và có hại cho sức khỏe hoặc an toàn xã hội.</p>
                 </div>`
-                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1_HRStlHrVNI8vACYJ3PsJRJ0GMftksd2'
+                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1bvUZ4Is10OCRN9zzO1zO_t4-xvk1Omnm'
             }
             else if (t.getAttribute('index') == '2') {
                 vam('.contentdevice').innerHTML =
@@ -54,7 +54,7 @@ vams('.device_box-nav_con').forEach((t) => {
                     <p style="flex: 1;">Ban tổ chức không chịu trách nhiệm bảo trì hay thay thế các thiết bị có sự cố hay hư hỏng.</p>
                 </div>
             </div>`
-                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1uw-X2MhNexYelm9vAtWBamQgB6iswvee'
+                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1LfWQ62-xlm6t0TZHMjSk2cWPOrp-x3sS'
             }
             else if (t.getAttribute('index') == '3') {
                 vam('.contentdevice').innerHTML =
@@ -65,7 +65,7 @@ vams('.device_box-nav_con').forEach((t) => {
                     <p style="flex: 1;">Các đội thi phải sử dụng Robot AI hình người Yanshee ở cả hai Vòng sơ loại và Vòng chung kết. Điều này cũng tạo nên điểm khác biệt nổi bật của Cuộc thi ROBO G 2024 là đấu trường AI đầu tiên tại Việt Nam sử dụng Robot hình người.</p>
                 </div>
             </div>`
-                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1CfLp_HOE8JsiwtmhsL4Ev5SInMCMbwB-'
+                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1yADN6eTIqJ7XMOZmGTMRz08_9r6VCxCH'
             }
         }
     }
