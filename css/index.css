@@ -1375,6 +1375,8 @@ body {
 
 .scroll-device_title>div {
     display: flex;
+    position: relative;
+    z-index: -2;
 }
 
 .scroll-device_title h1 {
