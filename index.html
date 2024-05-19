@@ -31,7 +31,7 @@
         <div class="box-wrap">
             <div class="box">
                 <div class="box-content">
-                    <h1>Đề Thi Bảng A</h1>
+                    <h1 id="dethitenbang">Đề Thi Bảng A</h1>
                     <div class="scroll_rela">
                         <div class="scroll_rela_title" style="flex: .5;">
                             <div style="position: sticky;top: 0;">
@@ -39,7 +39,8 @@
                                 <p>Đề thi ở Vòng sơ loại hoàn toàn mở cho các đội thi</p>
                             </div>
                         </div>
-                        <div class="scroll_rela_content" style="flex: 1.5;text-align: justify;padding: 0 30px;">
+                        <div class="scroll_rela_content" id="vongloai"
+                            style="flex: 1.5;text-align: justify;padding: 0 30px;">
                             <p> • Đề thi ở Vòng sơ loại hoàn toàn mở cho các đội ở mỗi bảng thi với yêu cầu chung là
                                 giới thiệu sản phẩm mô hình thiết kế với thành phần chính dựa trên các bộ giáo cụ AI
                                 Robotics của UBTECH bằng cách nộp trực tuyến các tài liệu cần thiết như sau:</p>
@@ -74,7 +75,33 @@
                                 <p>Đề thi ở Vòng sơ loại hoàn toàn mở cho các đội thi</p>
                             </div>
                         </div>
-                        <div class="scroll_rela_content" style="flex: 1.5;padding: 0 30px;">
+                        <div class="scroll_rela_content" id="chungket" style="flex: 1.5;padding: 0 30px;">
+                            <p>
+                                • Đề thi ở Vòng chung kết có 02 phần: cơ bản và nâng cao<br>
+                                - Phần cơ bản: chỉ bao gồm các nhiệm vụ cố định (biết trước)<br>
+                                - Phần nâng cao: ngoài các nhiệm vụ cố định còn có thêm một số nhiệm vụ trực tiếp do BTC
+                                và BGK ra đề ngay tại buổi thi đấu (không biết trước).<br>
+                                • Mỗi bảng có 1 chủ đề và bộ đề thi-bảng điểm cho phần thi cơ bản (đính kèm thiết kế sa
+                                bàn và các mô hình nhiệm vụ trên sa bàn).<br>
+                                • Thời gian tối đa hoàn thành mỗi đề thi ở mỗi lượt (lần) thi được quy định cho mỗi
+                                bảng.<br>
+                                • Các đội được phép lắp ráp, lập trình và chuẩn bị Robot AI trước khi bắt đầu thi đấu
+                                cho tất cả các phần thi.<br>
+                                • Sau khi bốc thăm đề thi và thứ tự thi đấu, các đội có thời gian để cập nhật Robot AI
+                                tại khu vực tập trung.<br>
+                                • Các Robot AI sẽ được BTC kiểm tra tại khu vực cách ly.<br>
+                                • Đến lượt thi đấu, các đội mang Robot AI của mình từ khu vực cách ly đến khu vực thi
+                                đấu và thực hiện nhiệm vụ. Sau khi ký xác nhận vào danh sách kết quả, các đội mang Robot
+                                AI trở lại khu vực cách ly.<br>
+                                • Sau khi tất cả các đội thi trong bảng hoàn thành nhiệm vụ ở một lượt, các đội nhận lại
+                                Robot AI và có thời gian cập nhật Robot AI tại khu vực tập trung để chuẩn bị cho lượt
+                                thi đấu tiếp theo (nếu có).<br>
+                                • Mỗi đội sẽ nhận được điểm ở mỗi nhiệm vụ tương ứng với mức độ hoàn thành. Điểm số cho
+                                mỗi phần thi sẽ dựa vào lượt thực hiện tốt nhất của mỗi đội.<br>
+                                • Điểm cuối cùng của cuộc thi vòng chung kết là tổng điểm của 2 phần thi. Trong trường
+                                hợp các đội xuất sắc bằng điểm nhau sẽ tính đến các tiêu chí phụ để căn cứ vào đó chọn
+                                ra đội được giải thưởng tương ứng của bảng đấu.<br>
+                            </p>
                             <p>
                                 <b>CHỦ ĐỀ: THU THẬP TÀI NGUYÊN</b><br>
                                 • Thông qua chủ đề Thu Thập Tài Nguyên, đề thi bảng A yêu cầu Robot AI thực hiện các
@@ -107,10 +134,6 @@
                                 - Tránh vật cản<br>
                                 - Lấy và mang vật thể về đúng vị trí<br>
                             </p>
-                            <!--<div style="padding: 30px 0 ;display: flex;align-items: center;gap: 10px;">
-                                <input type="checkbox" name="" id="" style="cursor: pointer;">
-                                <p>Xác nhận đã đọc và sẽ tuân theo đề thi mà cuộc thi đã đề ra.</p>
-                            </div>-->
                             <div style="padding-top: 50px;">
                                 <button class="buttonvam"><a href="https://forms.gle/pYkZiaFH3EpxEJtD7"
                                         target="_blank">Đăng
@@ -347,7 +370,7 @@
                                 và 1 giáo viên hướng dẫn”</p>
                         </div>
                         <div style="display: flex;justify-content: center;width: 100%;">
-                            <button>
+                            <button class="dkthamgia" index="1">
                                 <a target="_blank">Đăng ký ngay</a>
                             </button>
                         </div>
@@ -364,7 +387,7 @@
                                 và 1 giáo viên hướng dẫn”</p>
                         </div>
                         <div style="display: flex;justify-content: center;width: 100%;">
-                            <button>
+                            <button class="dkthamgia" index="2">
                                 <a target="_blank">Đăng ký ngay</a>
                             </button>
                         </div>
@@ -382,7 +405,7 @@
                                 thi quốc tế thì cần trong nhóm tuổi 17-23 (sinh năm 2001-2007)”</p>
                         </div>
                         <div style="display: flex;justify-content: center;width: 100%;">
-                            <button>
+                            <button class="dkthamgia" index="3">
                                 <a target="_blank">Đăng ký ngay</a>
                             </button>
                         </div>
@@ -400,7 +423,7 @@
                                 tuyển chọn thi quốc tế thì cần trong nhóm tuổi 17-23 (sinh năm 2001-2007)”</p>
                         </div>
                         <div style="display: flex;justify-content: center;width: 100%;">
-                            <button>
+                            <button class="dkthamgia" index="4">
                                 <a target="_blank">Đăng ký ngay</a>
                             </button>
                         </div>
