@@ -703,6 +703,28 @@ body {
     z-index: 0;
 }
 
+.scroll_rela_content p {
+    text-align: justify;
+    color: var(--color-h1);
+}
+
+.buttonvam {
+    transition: all .3s linear;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    background-color: white;
+    color: var(--color-text);
+    border: 3px solid var(--color-text);
+    font-size: 18px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.buttonvam:hover {
+    background-color: var(--color-text);
+    color: white
+}
 
 .introd-vam_boxwrap>div {
     padding: 30px;
