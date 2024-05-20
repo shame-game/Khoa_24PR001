@@ -309,12 +309,12 @@ vams('.device_box-nav_con').forEach((t) => {
             else if (t.getAttribute('index') == '3') {
                 vam('.contentdevice').innerHTML =
                     `<div style="text-align: justify;" class="contentdevice">
-                <h1>Riêng ở bảng C Đặc biệt</h1>
-                <div style="display: flex;align-items: start;padding: 10px 0;">
-                    <div class="iconvam"></div>
-                    <p style="flex: 1;">Các đội thi phải sử dụng Robot AI hình người Yanshee ở cả hai Vòng sơ loại và Vòng chung kết. Điều này cũng tạo nên điểm khác biệt nổi bật của Cuộc thi ROBO G 2024 là đấu trường AI đầu tiên tại Việt Nam sử dụng Robot hình người.</p>
-                </div>
-            </div>`
+                    <h1>Riêng ở bảng C Đặc biệt</h1>
+                    <div style="display: flex;align-items: start;padding: 10px 0;">
+                        <div class="iconvam"></div>
+                        <p style="flex: 1;">Các đội thi phải sử dụng Robot AI hình người Yanshee ở cả hai Vòng sơ loại và Vòng chung kết. Điều này cũng tạo nên điểm khác biệt nổi bật của Cuộc thi ROBOG 2024 là đấu trường AI đầu tiên tại Việt Nam sử dụng Robot hình người.</p>
+                    </div>
+                </div>`
                 vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1yADN6eTIqJ7XMOZmGTMRz08_9r6VCxCH'
             }
         }
@@ -342,7 +342,7 @@ const intromain =
                                                                                                     <img src="https://lh3.googleusercontent.com/d/1PE-EtRbgsb7dBK3iPHG6INK8GPE4r1AZ">
                                                                                                 </div>
                                                                                                 <div class="intrologo-hiden">
-                                                                                                    <h2>RoBo G</h2>
+                                                                                                    <h2>RoboG</h2>
                                                                                                     <p> Việt Nam </p><span>2024</span>
                                                                                                 </div>
                                                                                             </div>
@@ -357,7 +357,7 @@ window.onload = () => {
     vam('#intro_link').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     vam('#intro_content').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     vam('#intro_logo').setAttribute('style', 'animation: introbanner .8s 1.3s linear forwards;')
-
+    vam('#intro_down').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     setTimeout(() => {
         vam('body').setAttribute('style', 'overflow:auto')
     }, 2000)
