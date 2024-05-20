@@ -13,6 +13,10 @@ vams('.dkthamgia').forEach((t) => {
             vam('#popup').setAttribute('style', 'display:none')
             vam('body').setAttribute('style', 'overflow:auto')
         }
+        vam('#outpopup').onclick = () => {
+            vam('#popup').setAttribute('style', 'display:none')
+            vam('body').setAttribute('style', 'overflow:auto')
+        }
         vam('body').setAttribute('style', 'overflow:hidden')
         if (t.getAttribute('index') == '1') {
             vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG A'
@@ -391,7 +395,9 @@ window.onscroll = () => {
 };
 
 let w = screen.width
-
+if (w < 982) {
+    vam('#timeline_img').src = 'https://lh3.googleusercontent.com/d/1cd5tFOxzjKSR1V_vasFwVuvwyHf3Id1z'
+}
 
 fetchSheet
     .fetch({
