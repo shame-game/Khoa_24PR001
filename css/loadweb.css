@@ -103,6 +103,10 @@ img {
         flex-direction: column;
         justify-content: center;
     }
+
+    .introlofogen {
+        width: 40%;
+    }
 }
 
 @keyframes intrologoHiden {
