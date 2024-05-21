@@ -113,7 +113,7 @@ function More() {
         });
 }
 
-
+/*
 vams('.dkthamgia').forEach((t) => {
     t.onclick = () => {
         vam('#popup').setAttribute('style', 'display:block')
@@ -366,6 +366,68 @@ vams('.dkthamgia').forEach((t) => {
                         - Khả năng lấy và mang vật thể về đúng vị trí quy định.<br>
                     </p>
                     <div style="padding-top: 50px;display: flex;gap:16px">
+                    <button class="buttonvam"><a href="https://forms.gle/xyQ8WACFfnGqcQTn9"
+                            target="_blank">Đăng
+                            ký</a></button>
+                            <!-- <button class="buttonvam showdetail" index='4'>Tải đề thi chi tiết</button> -->
+                </div>`
+            More()
+        }
+    }
+})*/
+vams('.dkthamgia').forEach((t) => {
+    t.onclick = () => {
+        vam('#popup').setAttribute('style', 'display:block')
+        vam('.background').onclick = () => {
+            vam('#popup').setAttribute('style', 'display:none')
+            vam('body').setAttribute('style', 'overflow:auto')
+        }
+        vam('#outpopup').onclick = () => {
+            vam('#popup').setAttribute('style', 'display:none')
+            vam('body').setAttribute('style', 'overflow:auto')
+        }
+        vam('body').setAttribute('style', 'overflow:hidden')
+        if (t.getAttribute('index') == '1') {
+            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG A (Đang cập nhập)'
+            vam('#chungket').innerHTML =
+                `<div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
+            <button class="buttonvam"><a href="https://forms.gle/pYkZiaFH3EpxEJtD7"
+                    target="_blank">Đăng
+                    ký</a></button>
+            <button class="showpoin buttonvam" index="1">Xem bảng điểm</button>
+            <!--<button class="buttonvam showdetail" index='1'>Tải đề thi chi tiết</button>-->
+        </div>`
+            More()
+        }
+        else if (t.getAttribute('index') == '2') {
+            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG B (Đang cập nhập)'
+            vam('#chungket').innerHTML =
+                `
+                        <div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
+                                <button class="buttonvam"><a href="https://forms.gle/ko3fduTh8UtBVM1e6"
+                                        target="_blank">Đăng
+                                        ký</a></button>
+                                <button class="showpoin buttonvam" index="2">Xem bảng điểm</button>
+                                <!-- <button class="buttonvam showdetail" index='2'>Tải đề thi chi tiết</button>-->
+                            </div>`
+            More()
+        }
+        else if (t.getAttribute('index') == '3') {
+            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG C (Đang cập nhập)'
+            vam('#chungket').innerHTML =
+                `<div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
+                    <button class="buttonvam"><a href="https://forms.gle/5DcdVTHQtXm6ttay8"
+                            target="_blank">Đăng
+                            ký</a></button>
+                    <button class="showpoin buttonvam" index="3">Xem bảng điểm</button>
+                </div>`
+
+            More()
+        }
+        else if (t.getAttribute('index') == '4') {
+            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG C* ĐẶC BIỆT (Đang cập nhập)'
+            vam('#chungket').innerHTML =
+                `<div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
                     <button class="buttonvam"><a href="https://forms.gle/xyQ8WACFfnGqcQTn9"
                             target="_blank">Đăng
                             ký</a></button>
