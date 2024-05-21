@@ -98,6 +98,13 @@ img {
     align-items: center;
 }
 
+@media (max-width: 640px) {
+    .intrologo>div {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
 @keyframes intrologoHiden {
     0% {
         visibility: visible;
