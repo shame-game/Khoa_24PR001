@@ -23,6 +23,11 @@
 </head>
 
 <body>
+    <div id="pdfViewer" style="display: none;">
+        <div id="pdfViewer-wrap">
+
+        </div>
+    </div>
     <div class="loadweb">
         <div></div>
     </div>
@@ -179,10 +184,10 @@
                 <img id="intro_logo">
                 <h3 style="margin-top: 16px;" class="vam_title2" id="intro_title"></h3>
                 <p class="vam_content" id="intro_content"></p>
-                <div style="display: flex;gap: 16px;">
+                <div id="intro_anim">
                     <button class="vam_button1" id="intro_link"><a href="#thamgiangay">Tham gia
                             ngay</a></button>
-                    <button class="vam_button1" id="intro_down"><a href="ds">Tải tài nguyên
+                    <button class="vam_button1" id="intro_down"><a onclick="downloadZip()">Tải tài nguyên
                             cuộc
                             thi</a></button>
                 </div>
@@ -280,9 +285,12 @@
                             <p>Dành cho thí sinh trong nhóm tuổi 7-14 (sinh năm 2010-2017), mỗi đội thi gồm 2 thí sinh
                                 và 1 giáo viên hướng dẫn.</p>
                         </div>
-                        <div style="display: flex;justify-content: center;width: 100%;">
-                            <button class="dkthamgia" index="1">
-                                <a target="_blank">Đăng ký ngay</a>
+                        <div style="width: 100%;">
+                            <button class="dkthamgia" index="1" style="width: 90%;margin-bottom: 0;">
+                                <a style="text-align: center;">Đăng ký ngay</a>
+                            </button>
+                            <button style="width: 90%;" class="showpoin" index="1">
+                                <a style="text-align: center;">Xem bảng chấm điểm</a>
                             </button>
                         </div>
                     </div>
@@ -297,9 +305,12 @@
                             <p>Dành cho thí sinh trong nhóm tuổi 13-18 (sinh năm 2006-2011), mỗi đội thi gồm 2 thí sinh
                                 và 1 giáo viên hướng dẫn.</p>
                         </div>
-                        <div style="display: flex;justify-content: center;width: 100%;">
-                            <button class="dkthamgia" index="2">
-                                <a target="_blank">Đăng ký ngay</a>
+                        <div style="width: 100%;">
+                            <button class="dkthamgia" index="2" style="width: 90%;margin-bottom: 0;">
+                                <a style="text-align: center;" target="_blank">Đăng ký ngay</a>
+                            </button>
+                            <button style="width: 90%;" class="showpoin" index="2">
+                                <a style="text-align: center;">Xem bảng chấm điểm</a>
                             </button>
                         </div>
                     </div>
@@ -315,9 +326,12 @@
                                 sinh và 1 giáo viên hướng dẫn. Riêng các đội ở bảng C đạt kết quả cao được tuyển chọn
                                 thi quốc tế thì cần trong nhóm tuổi 17-23 (sinh năm 2001-2007).</p>
                         </div>
-                        <div style="display: flex;justify-content: center;width: 100%;">
-                            <button class="dkthamgia" index="3">
-                                <a target="_blank">Đăng ký ngay</a>
+                        <div style="width: 100%;">
+                            <button class="dkthamgia" index="3" style="width: 90%;margin-bottom: 0;">
+                                <a style="text-align: center;" target="_blank">Đăng ký ngay</a>
+                            </button>
+                            <button style="width: 90%;" class="showpoin" index="3">
+                                <a style="text-align: center;">Xem bảng chấm điểm</a>
                             </button>
                         </div>
                     </div>
@@ -333,9 +347,13 @@
                                 sinh và 1 giáo viên hướng dẫn. Riêng các đội ở bảng C Đặc biệt đạt kết quả cao được
                                 tuyển chọn thi quốc tế thì cần trong nhóm tuổi 17-23 (sinh năm 2001-2007).</p>
                         </div>
-                        <div style="display: flex;justify-content: center;width: 100%;">
-                            <button class="dkthamgia" index="4">
-                                <a target="_blank">Đăng ký ngay</a>
+
+                        <div style="width: 100%;">
+                            <button class="dkthamgia" index="4" style="width: 90%;margin-bottom: 0;">
+                                <a style="text-align: center;" target="_blank">Đăng ký ngay</a>
+                            </button>
+                            <button style="width: 90%;" class="showpoin" index="4">
+                                <a style="text-align: center;">Xem bảng chấm điểm</a>
                             </button>
                         </div>
                     </div>
@@ -468,7 +486,7 @@
 
     </section>
     <section id="prize" style="padding: 50px 0;overflow: hidden;">
-        <div class="vam_wrap2" style="padding: 50px 0">
+        <div class="vam_wrap" style="padding: 50px 0">
             <div class="scroll-thongdiep_title device">
                 <span>Giải thưởng</span>
                 <h1>Cơ cấu giải thưởng của cuộc thi</h1>
@@ -494,98 +512,110 @@
             <div class="col-lg-4">
                 <div style="display: flex;flex-direction: column;align-items: center;height: 100%;"
                     class="glowing-border b">
-                    <div class="name-ct">
-                        RoboG 2024
-                    </div>
-                    <div class="name-vong">
-                        <img src="https://lh3.googleusercontent.com/d/1SGXoMet8x60Z0dXNFsBc07fj8YJHwHHb" alt="">
-                        <p>Vòng sơ loại</p>
-                        <span>*Giải thưởng dành cho bảng A, B, C</span>
-                    </div>
-                    <div class="giaithuong" style="width: 100%;">
-                        <div style="display: flex;flex-direction: column;align-items: center;padding: 16px;">
-                            <span style="font-size: 32px;"> <strong style="font-size: 34px;">03</strong> Giải
-                                Nhất</span>
-                            <p class="chuthichall">- Mỗi giải trị giá -</p>
-                            <h3 style="font-size: 34px">30.000.000 VNĐ</h3>
+                    <div
+                        style="position: relative;z-index: 99;display: flex;flex-direction: column;align-items: center;height: 100%;">
+                        <div class="name-ct">
+                            RoboG 2024
                         </div>
-                        <div style="display: flex;border-top: 2px solid var(--color-text);width: 100%;">
-                            <div
-                                style="flex: 1;padding:5px 16px;;display: flex;border-right: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
-                                <span><strong style="font-size: 22px;">03</strong> Giải Nhì</span>
+                        <div class="name-vong">
+                            <img src="https://lh3.googleusercontent.com/d/1SGXoMet8x60Z0dXNFsBc07fj8YJHwHHb" alt="">
+                            <p>Vòng sơ loại</p>
+                            <span style="font-weight: 600;">*Giải thưởng dành cho bảng A, B, C</span>
+                        </div>
+                        <div class="giaithuong" style="width: 100%;">
+                            <div style="display: flex;flex-direction: column;align-items: center;padding: 16px;">
+                                <span style="font-size: 32px;"> <strong style="font-size: 34px;">03</strong> Giải
+                                    Nhất</span>
                                 <p class="chuthichall">- Mỗi giải trị giá -</p>
-                                <h3 style="font-size: 20px;">10.000.000 VNĐ</h3>
+                                <h3 style="font-size: 34px">30.000.000 VNĐ</h3>
                             </div>
-                            <div
-                                style="flex: 1;padding:5px 16px;;display: flex;border-left: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
-                                <span><strong style="font-size: 22px;">06</strong> giải ba</span>
-                                <p class="chuthichall">- Mỗi giải trị giá -</p>
-                                <h3 style="font-size: 20px;">2.000.000 VNĐ</h3>
+                            <div style="display: flex;border-top: 2px solid var(--color-text);width: 100%;">
+                                <div
+                                    style="flex: 1;padding:5px 16px;;display: flex;border-right: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
+                                    <span><strong style="font-size: 22px;">03</strong> Giải Nhì</span>
+                                    <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                    <h3 style="font-size: 20px;">10.000.000 VNĐ</h3>
+                                </div>
+                                <div
+                                    style="flex: 1;padding:5px 16px;;display: flex;border-left: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
+                                    <span><strong style="font-size: 22px;">06</strong> giải ba</span>
+                                    <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                    <h3 style="font-size: 20px;">2.000.000 VNĐ</h3>
+                                </div>
                             </div>
                         </div>
+                        <ul class="giaithuongp">
+                            <li><strong>06</strong> giải khuyến khích: 1.000.000 VNĐ</li>
+                        </ul>
                     </div>
-                    <ul class="giaithuongp">
-                        <li><strong>06</strong> giải khuyến khích: 1.000.000 VNĐ</li>
-                    </ul>
                 </div>
             </div>
             <div class="col-lg-8" id="giathuong">
-                <div style="display: flex;flex-direction: column;align-items: center;height: 100%;border: 3px solid var(--color-yellow);"
+                <div style="display: flex;flex-direction: column;align-items: center;height: 100%;"
                     class="glowing-border v">
-                    <div class="name-ct v">
-                        RoboG 2024
-                    </div>
-                    <div class="name-vong" style="width: 80%;">
-                        <img src="https://lh3.googleusercontent.com/d/1SEvgh-lsLh8AP7RZO2Nq2cwNAzRHgJoW" alt="">
-                        <p>Vòng chung kết</p>
-                        <div id="chuthichmb" style="width: 100%;display: flex;justify-content: space-between;">
-                            <span>*Giải thưởng dành cho bảng A, B, C</span>
-                            <span id="cdacbietmb">*Giải thưởng dành cho bảng C Đặc Biệt</span>
+                    <div
+                        style="position: relative;z-index: 99;display: flex;flex-direction: column;align-items: center;height: 100%;">
+                        <div class="name-ct v">
+                            RoboG 2024
                         </div>
-                    </div>
-                    <div style="display: flex;" id="chunketmb">
-                        <div style="flex: 1;">
-                            <div class="giaithuong v" style="width: 100%;">
-                                <div style="display: flex;flex-direction: column;align-items: center;padding: 16px;">
-                                    <span style="font-size: 32px;"> <strong style="font-size: 34px;">03</strong> Giải
-                                        Nhất</span>
-                                    <p class="chuthichall">- Mỗi giải trị giá -</p>
-                                    <h3 style="font-size: 34px">60.000.000 VNĐ</h3>
-                                </div>
-                                <div style="display: flex;border-top: 2px solid var(--color-text);width: 100%;">
-                                    <div
-                                        style="flex: 1;padding:5px 16px;;display: flex;border-right: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
-                                        <span><strong style="font-size: 22px;">03</strong> Giải Nhì</span>
-                                        <p class="chuthichall">- Mỗi giải trị giá -</p>
-                                        <h3 style="font-size: 20px;">10.000.000 VNĐ</h3>
-                                    </div>
-                                    <div
-                                        style="flex: 1;padding:5px 16px;;display: flex;border-left: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
-                                        <span><strong style="font-size: 22px;">06</strong> giải ba</span>
-                                        <p class="chuthichall">- Mỗi giải trị giá -</p>
-                                        <h3 style="font-size: 20px;">5.000.000 VNĐ</h3>
-                                    </div>
-                                </div>
+                        <div class="name-vong" style="width: 80%;">
+                            <img src="https://lh3.googleusercontent.com/d/1SEvgh-lsLh8AP7RZO2Nq2cwNAzRHgJoW" alt="">
+                            <p>Vòng chung kết</p>
+                            <div id="chuthichmb" style="width: 100%;display: flex;justify-content: space-between;">
+                                <span style="font-weight: 600;">*Giải thưởng dành cho bảng A, B, C</span>
+                                <span style="font-weight: 600;" id="cdacbietmb">*Giải thưởng dành cho bảng C Đặc
+                                    Biệt</span>
                             </div>
-                            <ul class="giaithuongp">
-                                <li><strong>09</strong> giải khuyến khích: 2.000.000 VNĐ</li>
-                            </ul>
                         </div>
-                        <div style="height: 300px;width: 3px;background-color: var(--color-yellow);margin:0 16px ;"
-                            id="fotmb">
-                        </div>
-                        <div style="flex: 1;">
-                            <div class="giaithuong v" style="width: 100%;">
-                                <div style="display: flex;flex-direction: column;align-items: center;padding: 16px;">
-                                    <span id="cdtmb">*Giải thưởng dành cho bảng C Đặc Biệt</span>
-                                    <span style="font-size: 32px;"> <strong style="font-size: 34px;">01</strong> Giải
-                                        Đặc Biệt</span>
-                                    <p class="chuthichall">- Tổng giá trị giải thưởng -</p>
-                                    <h3 style="font-size: 34px">120.000.000 VNĐ</h3>
-                                    <p style="text-align: justify;padding: 20px 0;">Cụ thể là 01 Robot AI hình người
-                                        Yanshee (trị giá
-                                        120.000.000 VNĐ) kèm Cúp vô địch, Kỷ
-                                        niệm chương (xác nhận đội thi, đơn vị) và quà tặng từ BTC và nhà tài trợ.</p>
+                        <div style="display: flex;" id="chunketmb">
+                            <div style="flex: 1;">
+                                <div class="giaithuong v" style="width: 100%;">
+                                    <div
+                                        style="display: flex;flex-direction: column;align-items: center;padding: 16px;">
+                                        <span style="font-size: 32px;"> <strong style="font-size: 34px;">03</strong>
+                                            Giải
+                                            Nhất</span>
+                                        <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                        <h3 style="font-size: 34px">60.000.000 VNĐ</h3>
+                                    </div>
+                                    <div style="display: flex;border-top: 2px solid var(--color-text);width: 100%;">
+                                        <div
+                                            style="flex: 1;padding:5px 16px;;display: flex;border-right: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
+                                            <span><strong style="font-size: 22px;">03</strong> Giải Nhì</span>
+                                            <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                            <h3 style="font-size: 20px;">10.000.000 VNĐ</h3>
+                                        </div>
+                                        <div
+                                            style="flex: 1;padding:5px 16px;;display: flex;border-left: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
+                                            <span><strong style="font-size: 22px;">06</strong> giải ba</span>
+                                            <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                            <h3 style="font-size: 20px;">5.000.000 VNĐ</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="giaithuongp">
+                                    <li><strong>09</strong> giải khuyến khích: 2.000.000 VNĐ</li>
+                                </ul>
+                            </div>
+                            <div style="height: 300px;width: 3px;background-color: var(--color-yellow);margin:0 16px ;"
+                                id="fotmb">
+                            </div>
+                            <div style="flex: 1;">
+                                <div class="giaithuong v" style="width: 100%;">
+                                    <div
+                                        style="display: flex;flex-direction: column;align-items: center;padding: 16px;">
+                                        <span id="cdtmb">*Giải thưởng dành cho bảng C Đặc Biệt</span>
+                                        <span style="font-size: 32px;"> <strong style="font-size: 34px;">01</strong>
+                                            Giải
+                                            Đặc Biệt</span>
+                                        <p class="chuthichall">- Tổng giá trị giải thưởng -</p>
+                                        <h3 style="font-size: 34px">120.000.000 VNĐ</h3>
+                                        <p style="text-align: justify;padding: 20px 0;">Cụ thể là 01 Robot AI hình người
+                                            Yanshee (trị giá
+                                            120.000.000 VNĐ) kèm Cúp vô địch, Kỷ
+                                            niệm chương (xác nhận đội thi, đơn vị) và quà tặng từ BTC và nhà tài trợ.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -593,11 +623,18 @@
                 </div>
             </div>
         </div>
+        <div class="vam_wrap" style="padding: 50px 0;">
+            <p><strong>Lưu ý:</strong></p>
+            <p>- Các giải tiềm năng được quà tặng từ BTC và nhà tài trợ.</p>
+            <p>- Ở vòng sơ loại, các giải có thêm các phần quà tặng từ BTC và nhà tài trợ.</p>
+            <p>- Ở vòng chung kết, các giải có thêm kỷ niêng chương và các phần quà tặng từ BTC và nhà tài trợ. Đối với
+                giải nhất sẽ được tặng kèm cúp vô địch.</p>
+        </div>
     </section>
     <section id="timeline" style="padding: 50px 0">
         <div class="vam_wrap">
             <img id="timeline_img" style="width: 100%;"
-                src="https://lh3.googleusercontent.com/d/1DqAVKwpoHRV-TdlD4boWwaWIIqZ3WHjC" alt="">
+                src="https://lh3.googleusercontent.com/d/1kEbU1AA33FdOG2JFeDaPN5_GZ3OqhObG" alt="">
         </div>
     </section>
     <section id="c661412b2" data-scroll-section>

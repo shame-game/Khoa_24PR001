@@ -5,6 +5,110 @@ const loginBtn = document.getElementById('login');
 
 const vam = document.querySelector.bind(document);
 const vams = document.querySelectorAll.bind(document);
+function downloadZip() {
+    // Đường dẫn của file zip bạn muốn tải
+    var zipUrl = '../Thời gian đăng ký.zip';
+
+    // Tạo một yêu cầu HTTP mới
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', zipUrl, true);
+    xhr.responseType = 'blob'; // Để có thể xử lý dữ liệu như là dạng binary
+
+    // Sự kiện xảy ra khi yêu cầu được hoàn thành
+    xhr.onload = function (event) {
+        if (xhr.status === 200) {
+            // Tạo một URL cho dữ liệu blob
+            var blob = xhr.response;
+            var url = window.URL.createObjectURL(blob);
+
+            // Tạo một thẻ a ẩn để tải file
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'file.zip'; // Tên file bạn muốn lưu
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    };
+
+    // Bắt đầu yêu cầu
+    xhr.send();
+}
+
+
+fetchSheet
+    .fetch({
+        gSheetId: '1V9ChaNGZHj8wu8iUEibzKW_od5LRDgDNMoGw6IV3pi8',
+        wSheetName: 'main',
+    })
+    .then((rows) => {
+        console.log(rows);
+        document.querySelectorAll('.showpoin').forEach((t) => {
+            t.addEventListener("click", function () {
+                if (t.getAttribute('index') == '1') {
+                    document.querySelector('#pdfViewer').style.display = "block";
+                    const pdfUrl = rows[0]['Bảng A']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+                    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+                <p>Thoát</p>
+            </div>`;
+                    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                    document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                    document.querySelector('#out-pdfViewer').onclick = () => {
+                        document.querySelector('#pdfViewer').style.display = "none";
+                        document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                        document.querySelector('body').setAttribute('style', 'overflow:auto');
+                    }
+                }
+                else if (t.getAttribute('index') == '2') {
+                    document.querySelector('#pdfViewer').style.display = "block";
+                    const pdfUrl = rows[0]['Bảng B']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+                    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+                <p>Thoát</p>
+            </div>`;
+                    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                    document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                    document.querySelector('#out-pdfViewer').onclick = () => {
+                        document.querySelector('#pdfViewer').style.display = "none";
+                        document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                        document.querySelector('body').setAttribute('style', 'overflow:auto');
+                    }
+                }
+                else if (t.getAttribute('index') == '3') {
+                    document.querySelector('#pdfViewer').style.display = "block";
+                    const pdfUrl = rows[0]['Bảng C']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+                    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+                <p>Thoát</p>
+            </div>`;
+                    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                    document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                    document.querySelector('#out-pdfViewer').onclick = () => {
+                        document.querySelector('#pdfViewer').style.display = "none";
+                        document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                        document.querySelector('body').setAttribute('style', 'overflow:auto');
+                    }
+                }
+                else if (t.getAttribute('index') == '4') {
+                    document.querySelector('#pdfViewer').style.display = "block";
+                    const pdfUrl = rows[0]['Bảng C đặc biệt']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+                    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+                <p>Thoát</p>
+            </div>`;
+                    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                    document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                    document.querySelector('#out-pdfViewer').onclick = () => {
+                        document.querySelector('#pdfViewer').style.display = "none";
+                        document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                        document.querySelector('body').setAttribute('style', 'overflow:auto');
+                    }
+                }
+            });
+        })
+    });
+
 
 vams('.dkthamgia').forEach((t) => {
     t.onclick = () => {
@@ -354,10 +458,9 @@ window.onload = () => {
     vam('#mainintro').innerHTML = intromain
     vam('body').setAttribute('style', 'overflow: hidden;')
     vam('.vam_title2').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
-    vam('#intro_link').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     vam('#intro_content').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     vam('#intro_logo').setAttribute('style', 'animation: introbanner .8s 1.3s linear forwards;')
-    vam('#intro_down').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
+    vam('#intro_anim').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     setTimeout(() => {
         vam('body').setAttribute('style', 'overflow:auto')
     }, 2000)
@@ -396,7 +499,7 @@ window.onscroll = () => {
 
 let w = screen.width
 if (w < 982) {
-    vam('#timeline_img').src = 'https://lh3.googleusercontent.com/d/1cd5tFOxzjKSR1V_vasFwVuvwyHf3Id1z'
+    vam('#timeline_img').src = 'https://lh3.googleusercontent.com/d/1Ws3Y-mWoEwD6WobVZioOeiQaErLuYq-R'
 }
 
 fetchSheet
@@ -575,6 +678,7 @@ fetchSheet
         let y = ''
         let u = ''
         let i = ''
+        let o = 1
         rows.forEach((tab) => {
             if (tab['Hình ảnh logo đơn vị chỉ đạo'] != '') {
                 r +=
@@ -600,7 +704,7 @@ fetchSheet
                     <img style="width:60%" src="${tab['Hình ảnh logo đơn vị truyền thông']}"/>
                 </div>`
             }
-
+            o++
         })
         document.querySelector('#chidao_load').innerHTML += r
         document.querySelector('#donghanh_load').innerHTML += t
