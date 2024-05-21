@@ -36,78 +36,82 @@ function downloadZip() {
 }
 
 
-fetchSheet
-    .fetch({
-        gSheetId: '1V9ChaNGZHj8wu8iUEibzKW_od5LRDgDNMoGw6IV3pi8',
-        wSheetName: 'main',
-    })
-    .then((rows) => {
-        console.log(rows);
-        document.querySelectorAll('.showpoin').forEach((t) => {
-            t.addEventListener("click", function () {
-                if (t.getAttribute('index') == '1') {
-                    document.querySelector('#pdfViewer').style.display = "block";
-                    const pdfUrl = rows[0]['Bảng A']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
-                    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
-                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
-                <p>Thoát</p>
-            </div>`;
-                    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
-                    document.querySelector('body').setAttribute('style', 'overflow:hidden');
-                    document.querySelector('#out-pdfViewer').onclick = () => {
-                        document.querySelector('#pdfViewer').style.display = "none";
-                        document.querySelector('#pdfViewer-wrap').innerHTML = ''
-                        document.querySelector('body').setAttribute('style', 'overflow:auto');
-                    }
-                }
-                else if (t.getAttribute('index') == '2') {
-                    document.querySelector('#pdfViewer').style.display = "block";
-                    const pdfUrl = rows[0]['Bảng B']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
-                    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
-                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
-                <p>Thoát</p>
-            </div>`;
-                    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
-                    document.querySelector('body').setAttribute('style', 'overflow:hidden');
-                    document.querySelector('#out-pdfViewer').onclick = () => {
-                        document.querySelector('#pdfViewer').style.display = "none";
-                        document.querySelector('#pdfViewer-wrap').innerHTML = ''
-                        document.querySelector('body').setAttribute('style', 'overflow:auto');
-                    }
-                }
-                else if (t.getAttribute('index') == '3') {
-                    document.querySelector('#pdfViewer').style.display = "block";
-                    const pdfUrl = rows[0]['Bảng C']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
-                    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
-                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
-                <p>Thoát</p>
-            </div>`;
-                    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
-                    document.querySelector('body').setAttribute('style', 'overflow:hidden');
-                    document.querySelector('#out-pdfViewer').onclick = () => {
-                        document.querySelector('#pdfViewer').style.display = "none";
-                        document.querySelector('#pdfViewer-wrap').innerHTML = ''
-                        document.querySelector('body').setAttribute('style', 'overflow:auto');
-                    }
-                }
-                else if (t.getAttribute('index') == '4') {
-                    document.querySelector('#pdfViewer').style.display = "block";
-                    const pdfUrl = rows[0]['Bảng C đặc biệt']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
-                    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
-                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
-                <p>Thoát</p>
-            </div>`;
-                    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
-                    document.querySelector('body').setAttribute('style', 'overflow:hidden');
-                    document.querySelector('#out-pdfViewer').onclick = () => {
-                        document.querySelector('#pdfViewer').style.display = "none";
-                        document.querySelector('#pdfViewer-wrap').innerHTML = ''
-                        document.querySelector('body').setAttribute('style', 'overflow:auto');
-                    }
-                }
-            });
+function More() {
+    fetchSheet
+        .fetch({
+            gSheetId: '1V9ChaNGZHj8wu8iUEibzKW_od5LRDgDNMoGw6IV3pi8',
+            wSheetName: 'main',
         })
-    });
+        .then((rows) => {
+            console.log(rows);
+            document.querySelectorAll('.showpoin').forEach((t) => {
+                console.log(t);
+                t.addEventListener("click", function () {
+                    console.log(t);
+                    if (t.getAttribute('index') == '1') {
+                        document.querySelector('#pdfViewer').style.display = "block";
+                        const pdfUrl = rows[0]['Bảng A']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+                        const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+                <p>Thoát</p>
+            </div>`;
+                        document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                        document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                        document.querySelector('#out-pdfViewer').onclick = () => {
+                            document.querySelector('#pdfViewer').style.display = "none";
+                            document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                            document.querySelector('body').setAttribute('style', 'overflow:auto');
+                        }
+                    }
+                    else if (t.getAttribute('index') == '2') {
+                        document.querySelector('#pdfViewer').style.display = "block";
+                        const pdfUrl = rows[0]['Bảng B']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+                        const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+                <p>Thoát</p>
+            </div>`;
+                        document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                        document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                        document.querySelector('#out-pdfViewer').onclick = () => {
+                            document.querySelector('#pdfViewer').style.display = "none";
+                            document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                            document.querySelector('body').setAttribute('style', 'overflow:auto');
+                        }
+                    }
+                    else if (t.getAttribute('index') == '3') {
+                        document.querySelector('#pdfViewer').style.display = "block";
+                        const pdfUrl = rows[0]['Bảng C']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+                        const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+                <p>Thoát</p>
+            </div>`;
+                        document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                        document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                        document.querySelector('#out-pdfViewer').onclick = () => {
+                            document.querySelector('#pdfViewer').style.display = "none";
+                            document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                            document.querySelector('body').setAttribute('style', 'overflow:auto');
+                        }
+                    }
+                    else if (t.getAttribute('index') == '4') {
+                        document.querySelector('#pdfViewer').style.display = "block";
+                        const pdfUrl = rows[0]['Bảng C* đặc biệt']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+                        const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+                <p>Thoát</p>
+            </div>`;
+                        document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                        document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                        document.querySelector('#out-pdfViewer').onclick = () => {
+                            document.querySelector('#pdfViewer').style.display = "none";
+                            document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                            document.querySelector('body').setAttribute('style', 'overflow:auto');
+                        }
+                    }
+                });
+            })
+        });
+}
 
 
 vams('.dkthamgia').forEach((t) => {
@@ -184,11 +188,14 @@ vams('.dkthamgia').forEach((t) => {
                 - Tránh vật cản<br>
                 - Lấy và mang vật thể về đúng vị trí<br>
             </p>
-            <div style="padding-top: 50px;">
-                <button class="buttonvam"><a href="https://forms.gle/pYkZiaFH3EpxEJtD7"
-                        target="_blank">Đăng
-                        ký</a></button>
-            </div>`
+            <div style="padding-top: 50px;display: flex;gap:16px">
+            <button class="buttonvam"><a href="https://forms.gle/pYkZiaFH3EpxEJtD7"
+                    target="_blank">Đăng
+                    ký</a></button>
+            <button class="showpoin buttonvam" index="1">Xem bảng điểm</button>
+            <!--<button class="buttonvam showdetail" index='1'>Tải đề thi chi tiết</button>-->
+        </div>`
+            More()
         }
         else if (t.getAttribute('index') == '2') {
             vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG B'
@@ -239,11 +246,14 @@ vams('.dkthamgia').forEach((t) => {
                             - Khả năng nhận diện màu sắc <br>
                             - Khả năng lấy và mang vật thể về đúng vị trí <br>
                         </p>
-                        <div style="padding-top: 50px;">
-                            <button class="buttonvam"><a href="https://forms.gle/ko3fduTh8UtBVM1e6"
-                                    target="_blank">Đăng
-                                    ký</a></button>
-                        </div>`
+                        <div style="padding-top: 50px;display: flex;gap:16px">
+                                <button class="buttonvam"><a href="https://forms.gle/ko3fduTh8UtBVM1e6"
+                                        target="_blank">Đăng
+                                        ký</a></button>
+                                <button class="showpoin buttonvam" index="2">Xem bảng điểm</button>
+                                <!-- <button class="buttonvam showdetail" index='2'>Tải đề thi chi tiết</button>-->
+                            </div>`
+            More()
         }
         else if (t.getAttribute('index') == '3') {
             vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG C'
@@ -295,14 +305,18 @@ vams('.dkthamgia').forEach((t) => {
                         - Khả năng lấy và mang vật thể về đúng vị trí quy định<br>
                         - Khả năng lưu trữ và sắp xếp dữ liệu thông tin<br>
                     </p>
-                    <div style="padding-top: 50px;">
-                        <button class="buttonvam"><a href="https://forms.gle/5DcdVTHQtXm6ttay8"
-                                target="_blank">Đăng
-                                ký</a></button>
-                    </div>`
+                    <div style="padding-top: 50px;display: flex;gap:16px">
+                    <button class="buttonvam"><a href="https://forms.gle/5DcdVTHQtXm6ttay8"
+                            target="_blank">Đăng
+                            ký</a></button>
+                    <button class="showpoin buttonvam" index="3">Xem bảng điểm</button>
+                    <!-- <button class="buttonvam showdetail" index='3'>Tải đề thi chi tiết</button>-->
+                </div>`
+
+            More()
         }
         else if (t.getAttribute('index') == '4') {
-            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG C ĐẶC BIỆT'
+            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG C* ĐẶC BIỆT'
             vam('#chungket').innerHTML =
                 `
             <p>
@@ -333,7 +347,7 @@ vams('.dkthamgia').forEach((t) => {
                     </p>
                     <p>
                         <b>CHỦ ĐỀ: THU THẬP TÀI NGUYÊN</b><br>
-                        • Thông qua chủ đề Tương Lai Của Robot AI, đề thi bảng C Đặc biệt yêu cầu Robot AI hình người Yanshee nhận biết môi trường không gian xung quanh để vượt qua các chướng ngại vật (bậc thang và rào chắn), thực hiện nhận diện khuôn mặt và mã AprilTag, nghe lệnh bằng giọng nói để lấy và vận chuyển các vật phẩm có màu sắc (xanh và đỏ) được chỉ định đến đúng khu vực lưu trữ vật phẩm tương ứng.<br>
+                        • Thông qua chủ đề Tương Lai Của Robot AI, đề thi bảng C* Đặc biệt yêu cầu Robot AI hình người Yanshee nhận biết môi trường không gian xung quanh để vượt qua các chướng ngại vật (bậc thang và rào chắn), thực hiện nhận diện khuôn mặt và mã AprilTag, nghe lệnh bằng giọng nói để lấy và vận chuyển các vật phẩm có màu sắc (xanh và đỏ) được chỉ định đến đúng khu vực lưu trữ vật phẩm tương ứng.<br>
                         • Các đội thi phải lập trình điều khiển Robot AI hoàn toàn tự động trong thời gian thi đấu (không sử dụng bất kì thiết bị lập trình nào).<br>
                         <b>• Sản phẩm bắt buộc: Robot AI hình người Yanshee (Đấu trường AI đầu tiên tại Việt Nam sử dụng Robot hình người).</b><br>
                     </p>
@@ -351,11 +365,13 @@ vams('.dkthamgia').forEach((t) => {
                         - Khả năng phát hiện vật cản.<br>
                         - Khả năng lấy và mang vật thể về đúng vị trí quy định.<br>
                     </p>
-                    <div style="padding-top: 50px;">
-                        <button class="buttonvam"><a href="https://forms.gle/xyQ8WACFfnGqcQTn9"
-                                target="_blank">Đăng
-                                ký</a></button>
-                    </div>`
+                    <div style="padding-top: 50px;display: flex;gap:16px">
+                    <button class="buttonvam"><a href="https://forms.gle/xyQ8WACFfnGqcQTn9"
+                            target="_blank">Đăng
+                            ký</a></button>
+                            <!-- <button class="buttonvam showdetail" index='4'>Tải đề thi chi tiết</button> -->
+                </div>`
+            More()
         }
     }
 })
@@ -394,7 +410,7 @@ vams('.device_box-nav_con').forEach((t) => {
             else if (t.getAttribute('index') == '2') {
                 vam('.contentdevice').innerHTML =
                     `<div style="text-align: justify;" class="contentdevice">
-                <h1>Ở vòng chung kết</h1>
+                <h1>Ở vòng chung kết bảng A, B và C</h1>
                 <div style="display: flex;align-items: start;padding: 10px 0;">
                     <div class="iconvam"></div>
                     <p style="flex: 1;">Mô hình Robot AI của các đội thi chỉ được phép sử dụng các thiết bị có trong các bộ giáo cụ AI Robotics của UBTECH và phải thỏa giới hạn kích thước cho phép.</p>
@@ -407,13 +423,18 @@ vams('.device_box-nav_con').forEach((t) => {
                     <div class="iconvam"></div>
                     <p style="flex: 1;">Ban tổ chức không chịu trách nhiệm bảo trì hay thay thế các thiết bị có sự cố hay hư hỏng.</p>
                 </div>
+                <h1>Ở vòng chung kết bảng C* đặc biệt</h1>
+                <div style="display: flex;align-items: start;padding: 10px 0;">
+                    <div class="iconvam"></div>
+                    <p style="flex: 1;">Các đội thi phải sử dụng Robot AI hình người Yanshee ở Vòng chung kết. Điều này cũng tạo nên điểm khác biệt nổi bật của Cuộc thi ROBO G 2024 là đấu trường AI đầu tiên tại Việt Nam sử dụng Robot hình người.</p>
+                </div>
             </div>`
                 vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1LfWQ62-xlm6t0TZHMjSk2cWPOrp-x3sS'
             }
             else if (t.getAttribute('index') == '3') {
                 vam('.contentdevice').innerHTML =
                     `<div style="text-align: justify;" class="contentdevice">
-                    <h1>Riêng ở bảng C Đặc biệt</h1>
+                    <h1>Riêng ở bảng C* Đặc biệt</h1>
                     <div style="display: flex;align-items: start;padding: 10px 0;">
                         <div class="iconvam"></div>
                         <p style="flex: 1;">Các đội thi phải sử dụng Robot AI hình người Yanshee ở cả hai Vòng sơ loại và Vòng chung kết. Điều này cũng tạo nên điểm khác biệt nổi bật của Cuộc thi ROBO G 2024 là đấu trường AI đầu tiên tại Việt Nam sử dụng Robot hình người.</p>
@@ -499,7 +520,7 @@ window.onscroll = () => {
 
 let w = screen.width
 if (w < 982) {
-    vam('#timeline_img').src = 'https://lh3.googleusercontent.com/d/1Ws3Y-mWoEwD6WobVZioOeiQaErLuYq-R'
+    vam('#timeline_img').src = 'https://lh3.googleusercontent.com/d/10wQqbjrqKY8C6G__6Cp6F_4mEakqkQV8'
 }
 
 fetchSheet
