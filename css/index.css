@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     -ms-align-items: center;
-    background-color: #dae6ff;
+    background-color: #a1bfff;
     border: unset;
 }
 
@@ -34,8 +34,8 @@
     position: absolute;
     width: 60%;
     height: 140%;
-    background-image: linear-gradient(230deg, #dae6ff, #2268ff);
-    animation: ani 3s linear infinite;
+    background-image: linear-gradient(230deg, #a1bfff, #0051ff);
+    animation: ani 5s linear infinite;
 }
 
 .glowing-border.b::before {
@@ -54,7 +54,7 @@
     justify-content: center;
     align-items: center;
     -ms-align-items: center;
-    background-color: #fffbda;
+    background-color: #fff8bc;
     border: unset;
 }
 
@@ -63,8 +63,8 @@
     position: absolute;
     width: 40%;
     height: 180%;
-    background-image: linear-gradient(230deg, #fffbda, var(--color-yellow));
-    animation: ani 3s linear infinite;
+    background-color: #ffe600;
+    animation: ani 5s linear infinite;
 }
 
 .glowing-border.v::before {
