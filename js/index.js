@@ -7,7 +7,7 @@ const vam = document.querySelector.bind(document);
 const vams = document.querySelectorAll.bind(document);
 function downloadZip() {
     // Đường dẫn của file zip bạn muốn tải
-    var zipUrl = '../Thời gian đăng ký.zip';
+    var zipUrl = '../The le thi dau Robo G 2024-15052024 (1).docx';
 
     // Tạo một yêu cầu HTTP mới
     var xhr = new XMLHttpRequest();
@@ -24,7 +24,7 @@ function downloadZip() {
             // Tạo một thẻ a ẩn để tải file
             var a = document.createElement('a');
             a.href = url;
-            a.download = 'file.zip'; // Tên file bạn muốn lưu
+            a.download = 'The le thi dau Robo G 2024.docx'; // Tên file bạn muốn lưu
             document.body.appendChild(a);
             a.click();
             window.URL.revokeObjectURL(url);
