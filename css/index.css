@@ -2348,7 +2348,7 @@ body {
 
 
 #footer i::before {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .bottom_ft {
@@ -2747,6 +2747,16 @@ body {
 
 #cdtmb {
     display: none;
+}
+
+#ft_logo {
+    width: 70%;
+}
+
+#ft_logo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media (max-width: 982px) {
