@@ -6,19 +6,26 @@ const loginBtn = document.getElementById('login');
 const vam = document.querySelector.bind(document);
 const vams = document.querySelectorAll.bind(document);
 function downloadZip() {
-    document.querySelector('#pdfViewer').style.display = "block";
-    const pdfUrl = 'https://drive.google.com/file/d/1-J2AOnjD4pt_XT2IBExcD_LSxm9PfY_G/preview'; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
-    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
-                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
-                <p>Thoát</p>
-            </div>`;
-    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
-    document.querySelector('body').setAttribute('style', 'overflow:hidden');
-    document.querySelector('#out-pdfViewer').onclick = () => {
-        document.querySelector('#pdfViewer').style.display = "none";
-        document.querySelector('#pdfViewer-wrap').innerHTML = ''
-        document.querySelector('body').setAttribute('style', 'overflow:auto');
-    }
+    fetchSheet.fetch({
+        gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
+        wSheetName: 'Tài liệu Thêm',
+    })
+        .then((rows) => {
+            document.querySelector('#pdfViewer').style.display = "block";
+            const pdfUrl = rows[0]['Thể Lệ']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+            const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+                    <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+                    <p>Thoát</p>
+                </div>`;
+            document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+            document.querySelector('body').setAttribute('style', 'overflow:hidden');
+            document.querySelector('#out-pdfViewer').onclick = () => {
+                document.querySelector('#pdfViewer').style.display = "none";
+                document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                document.querySelector('body').setAttribute('style', 'overflow:auto');
+            }
+        })
+
 }
 fetchSheet
     .fetch({
