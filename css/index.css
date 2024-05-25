@@ -1667,15 +1667,14 @@ body {
     overflow: hidden;
     clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
 }
 
 .device_box-img>img {
-    height: 70%;
     object-fit: cover;
     object-position: center;
-    width: auto;
+    width: 100%;
 }
 
 /* timeline */
