@@ -6,56 +6,117 @@ const loginBtn = document.getElementById('login');
 const vam = document.querySelector.bind(document);
 const vams = document.querySelectorAll.bind(document);
 function downloadZip() {
-    // Đường dẫn của file zip bạn muốn tải
-    var zipUrl = '../The-le-thi-dau-Robo-G-2024-15052024-_1_.pdf';
-
-    // Tạo một yêu cầu HTTP mới
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', zipUrl, true);
-    xhr.responseType = 'blob'; // Để có thể xử lý dữ liệu như là dạng binary
-
-    // Sự kiện xảy ra khi yêu cầu được hoàn thành
-    xhr.onload = function (event) {
-        if (xhr.status === 200) {
-            // Tạo một URL cho dữ liệu blob
-            var blob = xhr.response;
-            var url = window.URL.createObjectURL(blob);
-
-            // Tạo một thẻ a ẩn để tải file
-            var a = document.createElement('a');
-            a.href = url;
-            a.download = 'The le thi dau Robo G 2024.pdf'; // Tên file bạn muốn lưu
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-        }
-    };
-
-    // Bắt đầu yêu cầu
-    xhr.send();
-}
-
-
-function More() {
-    fetchSheet
-        .fetch({
-            gSheetId: '1V9ChaNGZHj8wu8iUEibzKW_od5LRDgDNMoGw6IV3pi8',
-            wSheetName: 'main',
-        })
-        .then((rows) => {
-            console.log(rows);
-            document.querySelectorAll('.showpoin').forEach((t) => {
-                console.log(t);
-                t.addEventListener("click", function () {
-                    console.log(t);
-                    if (t.getAttribute('index') == '1') {
-                        document.querySelector('#pdfViewer').style.display = "block";
-                        const pdfUrl = rows[0]['Bảng A']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
-                        const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
+    document.querySelector('#pdfViewer').style.display = "block";
+    const pdfUrl = 'https://drive.google.com/file/d/1-J2AOnjD4pt_XT2IBExcD_LSxm9PfY_G/preview'; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
+    const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
                 <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
                 <p>Thoát</p>
             </div>`;
-                        document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+    document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+    document.querySelector('body').setAttribute('style', 'overflow:hidden');
+    document.querySelector('#out-pdfViewer').onclick = () => {
+        document.querySelector('#pdfViewer').style.display = "none";
+        document.querySelector('#pdfViewer-wrap').innerHTML = ''
+        document.querySelector('body').setAttribute('style', 'overflow:auto');
+    }
+}
+fetchSheet
+    .fetch({
+        gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
+        wSheetName: 'Tài liệu Thêm',
+    })
+    .then((rows) => {
+        vams('.dkthamgia').forEach((t) => {
+            t.onclick = () => {
+                vam('#popup').setAttribute('style', 'display:block')
+                vam('.background').onclick = () => {
+                    vam('#popup').setAttribute('style', 'display:none')
+                    vam('body').setAttribute('style', 'overflow:auto')
+                }
+                vam('#outpopup').onclick = () => {
+                    vam('#popup').setAttribute('style', 'display:none')
+                    vam('body').setAttribute('style', 'overflow:auto')
+                }
+                vam('body').setAttribute('style', 'overflow:hidden')
+                if (t.getAttribute('index') == '1') {
+                    vam('#dethitenbang').innerText = 'BẢNG A'
+                    vam('#chungket').innerHTML =
+                        `<div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
+                    <button class="buttonvam"><a href="${rows[2]['Bảng A']}"
+                    target="_blank">Đăng ký</a></button>
+                    <button class="showpoin buttonvam" index="1">Xem bảng điểm</button>
+                    <button class="buttonvam showdetail" index='1'>Đề thi chi tiết</button>
+                </div>`
+                    vam('#loadcontent').innerHTML = rows[3]['Bảng A']
+                    More()
+                }
+                else if (t.getAttribute('index') == '2') {
+                    vam('#dethitenbang').innerText = 'BẢNG B'
+                    vam('#chungket').innerHTML =
+                        `
+                        <div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
+                                <button class="buttonvam"><a href="${rows[2]['Bảng B']}"
+                                        target="_blank">Đăng
+                                        ký</a></button>
+                                <button class="showpoin buttonvam" index="2">Xem bảng điểm</button>
+                                <button class="buttonvam showdetail" index='2'>Đề thi chi tiết</button> 
+                            </div>`
+                    vam('#loadcontent').innerHTML = rows[3]['Bảng B']
+                    More()
+                }
+                else if (t.getAttribute('index') == '3') {
+                    vam('#dethitenbang').innerText = 'BẢNG C'
+                    vam('#chungket').innerHTML =
+                        `<div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
+                    <button class="buttonvam"><a href="${rows[2]['Bảng C']}"
+                            target="_blank">Đăng
+                            ký</a></button>
+                    <button class="showpoin buttonvam" index="3">Xem bảng điểm</button>
+                    <button class="buttonvam showdetail" index='3'>Đề thi chi tiết</button>
+                </div>`
+                    vam('#loadcontent').innerHTML = rows[3]['Bảng C']
+                    More()
+                }
+                else if (t.getAttribute('index') == '4') {
+                    vam('#dethitenbang').innerText = 'BẢNG C++ ĐẶC BIỆT'
+                    vam('#chungket').innerHTML =
+                        `<div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
+                    <button class="buttonvam"><a href="${rows[2]['Bảng C++ đặc biệt']}"
+                            target="_blank">Đăng
+                            ký</a></button>
+                            <button class="showpoin buttonvam" index="4">Xem bảng điểm</button>
+                            <button class="buttonvam showdetail" index='4'>Đề thi chi tiết</button>
+                </div>`
+                    vam('#loadcontent').innerHTML = rows[3]['Bảng C++ đặc biệt']
+                    More()
+                }
+            }
+        })
+    })
+function Loadlink(g) {
+    let pdfEmbed =
+        `<embed src="${g}" type="application/pdf" width="100%" height="100%">
+        <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
+            <p>Thoát</p>
+        </div>`
+    return pdfEmbed
+}
+function More() {
+    fetchSheet
+        .fetch({
+            gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
+            wSheetName: 'Tài liệu Thêm',
+        })
+        .then((rows) => {
+
+            // lấy bảng điểm 
+            document.querySelectorAll('.showpoin').forEach((t) => {
+
+                t.addEventListener("click", function () {
+
+                    if (t.getAttribute('index') == '1') {
+                        document.querySelector('#pdfViewer').style.display = "block";
+                        document.querySelector('#pdfViewer-wrap').innerHTML = Loadlink(rows[1]['Bảng A'])
                         document.querySelector('body').setAttribute('style', 'overflow:hidden');
                         document.querySelector('#out-pdfViewer').onclick = () => {
                             document.querySelector('#pdfViewer').style.display = "none";
@@ -65,12 +126,7 @@ function More() {
                     }
                     else if (t.getAttribute('index') == '2') {
                         document.querySelector('#pdfViewer').style.display = "block";
-                        const pdfUrl = rows[0]['Bảng B']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
-                        const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
-                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
-                <p>Thoát</p>
-            </div>`;
-                        document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                        document.querySelector('#pdfViewer-wrap').innerHTML = Loadlink(rows[1]['Bảng B'])
                         document.querySelector('body').setAttribute('style', 'overflow:hidden');
                         document.querySelector('#out-pdfViewer').onclick = () => {
                             document.querySelector('#pdfViewer').style.display = "none";
@@ -80,12 +136,7 @@ function More() {
                     }
                     else if (t.getAttribute('index') == '3') {
                         document.querySelector('#pdfViewer').style.display = "block";
-                        const pdfUrl = rows[0]['Bảng C']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
-                        const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
-                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
-                <p>Thoát</p>
-            </div>`;
-                        document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                        document.querySelector('#pdfViewer-wrap').innerHTML = Loadlink(rows[1]['Bảng C'])
                         document.querySelector('body').setAttribute('style', 'overflow:hidden');
                         document.querySelector('#out-pdfViewer').onclick = () => {
                             document.querySelector('#pdfViewer').style.display = "none";
@@ -95,12 +146,52 @@ function More() {
                     }
                     else if (t.getAttribute('index') == '4') {
                         document.querySelector('#pdfViewer').style.display = "block";
-                        const pdfUrl = rows[0]['Bảng C* đặc biệt']; // Thay đổi đường dẫn đến tệp PDF của bạn tại đây
-                        const pdfEmbed = `<embed src="${pdfUrl}" type="application/pdf" width="100%" height="100%">
-                <div id="out-pdfViewer"><i class="bi bi-box-arrow-left"></i>
-                <p>Thoát</p>
-            </div>`;
-                        document.querySelector('#pdfViewer-wrap').innerHTML = pdfEmbed;
+                        document.querySelector('#pdfViewer-wrap').innerHTML = Loadlink(rows[1]['Bảng C++ đặc biệt'])
+                        document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                        document.querySelector('#out-pdfViewer').onclick = () => {
+                            document.querySelector('#pdfViewer').style.display = "none";
+                            document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                            document.querySelector('body').setAttribute('style', 'overflow:auto');
+                        }
+                    }
+                });
+            })
+            // lấy chi tiết đề
+            document.querySelectorAll('.showdetail').forEach((t) => {
+                t.addEventListener("click", function () {
+                    if (t.getAttribute('index') == '1') {
+                        document.querySelector('#pdfViewer').style.display = "block";
+                        document.querySelector('#pdfViewer-wrap').innerHTML = Loadlink(rows[0]['Bảng A'])
+                        document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                        document.querySelector('#out-pdfViewer').onclick = () => {
+                            document.querySelector('#pdfViewer').style.display = "none";
+                            document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                            document.querySelector('body').setAttribute('style', 'overflow:auto');
+                        }
+                    }
+                    else if (t.getAttribute('index') == '2') {
+                        document.querySelector('#pdfViewer').style.display = "block";
+                        document.querySelector('#pdfViewer-wrap').innerHTML = Loadlink(rows[0]['Bảng B'])
+                        document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                        document.querySelector('#out-pdfViewer').onclick = () => {
+                            document.querySelector('#pdfViewer').style.display = "none";
+                            document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                            document.querySelector('body').setAttribute('style', 'overflow:auto');
+                        }
+                    }
+                    else if (t.getAttribute('index') == '3') {
+                        document.querySelector('#pdfViewer').style.display = "block";
+                        document.querySelector('#pdfViewer-wrap').innerHTML = Loadlink(rows[0]['Bảng C'])
+                        document.querySelector('body').setAttribute('style', 'overflow:hidden');
+                        document.querySelector('#out-pdfViewer').onclick = () => {
+                            document.querySelector('#pdfViewer').style.display = "none";
+                            document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                            document.querySelector('body').setAttribute('style', 'overflow:auto');
+                        }
+                    }
+                    else if (t.getAttribute('index') == '4') {
+                        document.querySelector('#pdfViewer').style.display = "block";
+                        document.querySelector('#pdfViewer-wrap').innerHTML = Loadlink(rows[0]['Bảng C++ đặc biệt'])
                         document.querySelector('body').setAttribute('style', 'overflow:hidden');
                         document.querySelector('#out-pdfViewer').onclick = () => {
                             document.querySelector('#pdfViewer').style.display = "none";
@@ -112,6 +203,8 @@ function More() {
             })
         });
 }
+
+
 
 /*
 vams('.dkthamgia').forEach((t) => {
@@ -193,7 +286,7 @@ vams('.dkthamgia').forEach((t) => {
                     target="_blank">Đăng
                     ký</a></button>
             <button class="showpoin buttonvam" index="1">Xem bảng điểm</button>
-            <!--<button class="buttonvam showdetail" index='1'>Tải đề thi chi tiết</button>-->
+            <button class="buttonvam showdetail" index='1'>Đề thi chi tiết</button>
         </div>`
             More()
         }
@@ -251,7 +344,7 @@ vams('.dkthamgia').forEach((t) => {
                                         target="_blank">Đăng
                                         ký</a></button>
                                 <button class="showpoin buttonvam" index="2">Xem bảng điểm</button>
-                                <!-- <button class="buttonvam showdetail" index='2'>Tải đề thi chi tiết</button>-->
+                                <button class="buttonvam showdetail" index='2'>Đề thi chi tiết</button>
                             </div>`
             More()
         }
@@ -310,7 +403,7 @@ vams('.dkthamgia').forEach((t) => {
                             target="_blank">Đăng
                             ký</a></button>
                     <button class="showpoin buttonvam" index="3">Xem bảng điểm</button>
-                    <!-- <button class="buttonvam showdetail" index='3'>Tải đề thi chi tiết</button>-->
+                    <button class="buttonvam showdetail" index='3'>Đề thi chi tiết</button>
                 </div>`
 
             More()
@@ -369,158 +462,14 @@ vams('.dkthamgia').forEach((t) => {
                     <button class="buttonvam"><a href="https://forms.gle/xyQ8WACFfnGqcQTn9"
                             target="_blank">Đăng
                             ký</a></button>
-                            <!-- <button class="buttonvam showdetail" index='4'>Tải đề thi chi tiết</button> -->
+                    <!--<button class="buttonvam showdetail" index='4'>Đề thi chi tiết</button>-->
                 </div>`
             More()
         }
     }
 })*/
-vams('.dkthamgia').forEach((t) => {
-    t.onclick = () => {
-        vam('#popup').setAttribute('style', 'display:block')
-        vam('.background').onclick = () => {
-            vam('#popup').setAttribute('style', 'display:none')
-            vam('body').setAttribute('style', 'overflow:auto')
-        }
-        vam('#outpopup').onclick = () => {
-            vam('#popup').setAttribute('style', 'display:none')
-            vam('body').setAttribute('style', 'overflow:auto')
-        }
-        vam('body').setAttribute('style', 'overflow:hidden')
-        if (t.getAttribute('index') == '1') {
-            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG A (Đang cập nhập)'
-            vam('#chungket').innerHTML =
-                `<div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
-            <button class="buttonvam"><a href="https://forms.gle/pYkZiaFH3EpxEJtD7"
-                    target="_blank">Đăng
-                    ký</a></button>
-            <button class="showpoin buttonvam" index="1">Xem bảng điểm</button>
-            <!--<button class="buttonvam showdetail" index='1'>Tải đề thi chi tiết</button>-->
-        </div>`
-            More()
-        }
-        else if (t.getAttribute('index') == '2') {
-            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG B (Đang cập nhập)'
-            vam('#chungket').innerHTML =
-                `
-                        <div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
-                                <button class="buttonvam"><a href="https://forms.gle/ko3fduTh8UtBVM1e6"
-                                        target="_blank">Đăng
-                                        ký</a></button>
-                                <button class="showpoin buttonvam" index="2">Xem bảng điểm</button>
-                                <!-- <button class="buttonvam showdetail" index='2'>Tải đề thi chi tiết</button>-->
-                            </div>`
-            More()
-        }
-        else if (t.getAttribute('index') == '3') {
-            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG C (Đang cập nhập)'
-            vam('#chungket').innerHTML =
-                `<div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
-                    <button class="buttonvam"><a href="https://forms.gle/5DcdVTHQtXm6ttay8"
-                            target="_blank">Đăng
-                            ký</a></button>
-                    <button class="showpoin buttonvam" index="3">Xem bảng điểm</button>
-                </div>`
 
-            More()
-        }
-        else if (t.getAttribute('index') == '4') {
-            vam('#dethitenbang').innerText = 'ĐỀ THI BẢNG C* ĐẶC BIỆT (Đang cập nhập)'
-            vam('#chungket').innerHTML =
-                `<div style="padding-top: 50px;display: flex;gap:16px;justify-content: center;">
-                    <button class="buttonvam"><a href="https://forms.gle/xyQ8WACFfnGqcQTn9"
-                            target="_blank">Đăng
-                            ký</a></button>
-                            <!-- <button class="buttonvam showdetail" index='4'>Tải đề thi chi tiết</button> -->
-                </div>`
-            More()
-        }
-    }
-})
 
-vams('.device_box-nav_con').forEach((t) => {
-    t.onclick = () => {
-        if (t.getAttribute('class') != 'device_box-nav_con acc') {
-            vam('.device_box-nav_con.acc').classList.remove('acc')
-            t.classList.add('acc')
-            if (t.getAttribute('index') == '1') {
-                vam('.contentdevice').innerHTML =
-                    `<h1>Ở vòng sơ loại</h1>
-                <div style="display: flex;align-items: start;padding: 10px 0;">
-                    <div class="iconvam"></div>
-                    <p style="flex: 1;">Các đội thi có thể sử dụng một hoặc nhiều phần cứng/phần
-                        mềm
-                        của các bộ giáo
-                        cụ AI Robotics của UBTECH trong sản phẩm AI Robotics của mình.</p>
-                </div>
-                <div style="display: flex;align-items: start;padding: 10px 0;">
-                    <div class="iconvam"></div>
-                    <p style="flex: 1;">Các đội thi được phép bổ sung phần cứng của mình bằng các vật
-                        liệu thông
-                        thường của nhà sản xuất hoặc các vật phẩm khác, chẳng hạn như vật liệu cắt laser
-                        hoặc vật liệu in 3D.</p>
-                </div>
-                <div style="display: flex;align-items: start;padding: 10px 0;">
-                    <div class="iconvam"></div>
-                    <p style="flex: 1;">Về nguyên tắc, không có hạn chế nào đối với việc sử dụng các
-                        thiết bị kết hợp
-                        với các bộ giáo cụ AI Robotics của UBTECH, ngoài những thiết bị gây ô nhiễm môi
-                        trường và có hại cho sức khỏe hoặc an toàn xã hội.</p>
-                </div>`
-                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1bvUZ4Is10OCRN9zzO1zO_t4-xvk1Omnm'
-            }
-            else if (t.getAttribute('index') == '2') {
-                vam('.contentdevice').innerHTML =
-                    `<div style="text-align: justify;" class="contentdevice">
-                <h1>Ở vòng chung kết bảng A, B và C</h1>
-                <div style="display: flex;align-items: start;padding: 10px 0;">
-                    <div class="iconvam"></div>
-                    <p style="flex: 1;">Mô hình Robot AI của các đội thi chỉ được phép sử dụng các thiết bị có trong các bộ giáo cụ AI Robotics của UBTECH và phải thỏa giới hạn kích thước cho phép.</p>
-                </div>
-                <div style="display: flex;align-items: start;padding: 10px 0;">
-                    <div class="iconvam"></div>
-                    <p style="flex: 1;">Các đội thi cần phải chuẩn bị và đem theo tất cả các thiết bị cần thiết như bộ công cụ, phần mềm, máy tính xách tay hoặc máy tính bảng, các đồ phụ tùng (thiết bị thay thế) trong ngày thi đấu.</p>
-                </div>
-                <div style="display: flex;align-items: start;padding: 10px 0;">
-                    <div class="iconvam"></div>
-                    <p style="flex: 1;">Ban tổ chức không chịu trách nhiệm bảo trì hay thay thế các thiết bị có sự cố hay hư hỏng.</p>
-                </div>
-                <h1>Ở vòng chung kết bảng C* đặc biệt</h1>
-                <div style="display: flex;align-items: start;padding: 10px 0;">
-                    <div class="iconvam"></div>
-                    <p style="flex: 1;">Các đội thi phải sử dụng Robot AI hình người Yanshee ở Vòng chung kết. Điều này cũng tạo nên điểm khác biệt nổi bật của Cuộc thi ROBO G 2024 là đấu trường AI đầu tiên tại Việt Nam sử dụng Robot hình người.</p>
-                </div>
-            </div>`
-                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1LfWQ62-xlm6t0TZHMjSk2cWPOrp-x3sS'
-            }
-            else if (t.getAttribute('index') == '3') {
-                vam('.contentdevice').innerHTML =
-                    `<div style="text-align: justify;" class="contentdevice">
-                    <h1>Riêng ở bảng C* Đặc biệt</h1>
-                    <div style="display: flex;align-items: start;padding: 10px 0;">
-                        <div class="iconvam"></div>
-                        <p style="flex: 1;">Các đội thi phải sử dụng Robot AI hình người Yanshee ở cả hai Vòng sơ loại và Vòng chung kết. Điều này cũng tạo nên điểm khác biệt nổi bật của Cuộc thi ROBO G 2024 là đấu trường AI đầu tiên tại Việt Nam sử dụng Robot hình người.</p>
-                    </div>
-                </div>`
-                vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1yADN6eTIqJ7XMOZmGTMRz08_9r6VCxCH'
-            }
-        }
-    }
-})
-
-/* #c661412b2 */
-vam('#c661412b2-iframe_click').addEventListener('click', () => {
-    vam('.c661412b2-background_click').setAttribute('style', 'display:flex')
-    vam('.c661412b2-iframe_click').setAttribute('style', 'display:flex')
-    var c661412b2Iframe = `<iframe class="c661412b2-iframe" src="https://drive.google.com/file/d/1HTbglh8_g1sfChlO7t8SPjmilkygdseD/preview" frameborder="0"
-                                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
-    vam('.c661412b2-iframe_click').innerHTML = c661412b2Iframe
-    vam('.c661412b2-background_click').addEventListener('click', () => {
-        vam('.c661412b2-background_click').setAttribute('style', 'display:none')
-        vam('.c661412b2-iframe_click').setAttribute('style', 'display:none')
-        vam('.c661412b2-iframe').remove()
-    })
-})
 
 const intromain =
     `<div class="intro">
@@ -529,7 +478,7 @@ const intromain =
                                                                                                     <img src="https://lh3.googleusercontent.com/d/1PE-EtRbgsb7dBK3iPHG6INK8GPE4r1AZ">
                                                                                                 </div>
                                                                                                 <div class="intrologo-hiden">
-                                                                                                    <h2>Robo G</h2>
+                                                                                                    <h2>ROBO G</h2>
                                                                                                     <p> Việt Nam </p><span>2024</span>
                                                                                                 </div>
                                                                                             </div>
@@ -551,24 +500,7 @@ window.onload = () => {
         vam('.intro').remove()
     }, 2500)
 };
-window.addEventListener("scroll", function (event) {
 
-    var scroll_y = this.scrollY;
-    this.document.querySelector('#intro').setAttribute('style', `top:${scroll_y / 3}px`)
-    if (scroll_y > 600) {
-        document.querySelector('#header1412a1').setAttribute('style', `height: max-content;
-        position: sticky;`)
-        document.querySelector('#header_logo').src = 'https://lh3.googleusercontent.com/d/1UsHT-SsPNDizafj3sBICKJZXpvyY5zCm'
-        document.querySelector('.header1412a1-list').setAttribute('style', 'color:var(--color-text)')
-
-
-    } else {
-        document.querySelector('#header1412a1').setAttribute('style', `height: 0;
-        position: relative;`)
-        document.querySelector('#header_logo').src = 'https://lh3.googleusercontent.com/d/1PE-EtRbgsb7dBK3iPHG6INK8GPE4r1AZ'
-        document.querySelector('.header1412a1-list').setAttribute('style', 'color:white')
-    }
-});
 
 window.onscroll = () => {
     var scroll = document.querySelector('#timeline').getClientRects()[0];
@@ -582,7 +514,7 @@ window.onscroll = () => {
 
 let w = screen.width
 if (w < 982) {
-    vam('#timeline_img').src = 'https://lh3.googleusercontent.com/d/10wQqbjrqKY8C6G__6Cp6F_4mEakqkQV8'
+    vam('#timeline_img').src = 'https://lh3.googleusercontent.com/d/1k7Vj1PoESNNB9SCrYqliJxbX1hlNdON9'
 }
 
 fetchSheet
@@ -591,7 +523,25 @@ fetchSheet
         wSheetName: 'header',
     })
     .then((rows) => {
-        document.querySelector('#header_logo').src = rows[0]['logo']
+        window.addEventListener("scroll", function (event) {
+
+            var scroll_y = this.scrollY;
+            this.document.querySelector('#intro').setAttribute('style', `top:${scroll_y / 3}px`)
+            if (scroll_y > 600) {
+                document.querySelector('#header1412a1').setAttribute('style', `height: max-content;
+                position: sticky;`)
+                document.querySelector('#header_logo').src = rows[0]['logo màu']
+                document.querySelector('.header1412a1-list').setAttribute('style', 'color:var(--color-text)')
+                document.querySelector('.s').classList.add('acc')
+
+            } else {
+                document.querySelector('#header1412a1').setAttribute('style', `height: 0;
+                position: relative;`)
+                document.querySelector('#header_logo').src = rows[0]['logo trắng']
+                document.querySelector('.header1412a1-list').setAttribute('style', 'color:white')
+                document.querySelector('.s').classList.remove('acc')
+            }
+        });
     });
 
 fetchSheet
@@ -603,42 +553,85 @@ fetchSheet
         document.querySelector('#intro_content').innerText = rows[0]['Nội dung']
         document.querySelector('#intro_title').innerText = rows[0]['Tiêu đề']
         document.querySelector('#intro_background').src = rows[0]['background']
-        document.querySelector('#intro_link').src = rows[0]['Link tham gia']
-        // document.querySelector('#intro_img').src = rows[0]['img']
         document.querySelector('#intro_logo').src = rows[0]['logo']
     });
 
 fetchSheet
     .fetch({
         gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
-        wSheetName: 'introduce',
+        wSheetName: 'Mục tiêu',
     })
     .then((rows) => {
-        // document.querySelector('#introduce_img').src = rows[0]['Hình']
-        //document.querySelector('#introduce_title').innerText = rows[0]['Tiêu đề']
-        // document.querySelector('#introduce_content').innerText = rows[0]['Nội dung']
+        let items = ''
+        vam('#introduce_sTitle').innerText = rows[0]['shortTitle']
+        vam('#introduce_title').innerText = rows[0]['Title']
+        let i = 1
+        let v = ''
+        rows.forEach((T) => {
+            if (i == 5) {
+                items +=
+                    `
+                <div class="col-lg-4 col-md-6 introd-vam_boxwrap">
+                    <div>
+                        <div class="introd-vam_i"><i class="bi ${T.icon}"></i></div>
+                        <h1 >${T.Title_nav}</h1>
+                        <p >${T.Content}<p id="loadtg" style="color:var(--color-text);cursor:pointer;margin-top:10px">Xem Thêm Thông Tin Cuộc Thi ROBO G 2024 Thế Giới</p></p>
+                    </div>
+                </div>
+            `
+            }
+            else {
+                items +=
+                    `
+                <div class="col-lg-4 col-md-6 introd-vam_boxwrap">
+                    <div>
+                        <div class="introd-vam_i"><i class="bi ${T.icon}"></i></div>
+                        <h1 >${T.Title_nav}</h1>
+                        <p >${T.Content}</p>
+                    </div>
+                </div>
+            `
+            }
+
+            i++
+        })
+        vam('.introduce_mt-wrap').innerHTML = items
+        vam('#loadtg').onclick = () => {
+            document.querySelector('#pdfViewer').style.display = "block";
+            document.querySelector('#pdfViewer-wrap').innerHTML = Loadlink(rows[0]['Đề Thi Thế Giới'])
+            document.querySelector('body').setAttribute('style', 'overflow:hidden');
+            document.querySelector('#out-pdfViewer').onclick = () => {
+                document.querySelector('#pdfViewer').style.display = "none";
+                document.querySelector('#pdfViewer-wrap').innerHTML = ''
+                document.querySelector('body').setAttribute('style', 'overflow:auto');
+            }
+        }
     });
 
 fetchSheet
     .fetch({
         gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
-        wSheetName: 'DoiTuongThamGia',
+        wSheetName: 'Điều Kiện Tham Gia',
     })
     .then((rows) => {
-        document.querySelectorAll('.object_wrapimg>img')[0].src = rows[0]['Hình ảnh']
-        document.querySelectorAll('.object_wrapimg>img')[1].src = rows[1]['Hình ảnh']
-        document.querySelectorAll('.object_wrapimg>img')[2].src = rows[2]['Hình ảnh']
-        document.querySelector('#object_title').innerText = rows[0]['Tiêu đề']
-        document.querySelector('#object_title1').innerText = rows[0]['Tiêu đề bảng']
-        document.querySelector('#object_content1').innerText = rows[0]['Nội dung bảng']
-        document.querySelector('#object_title2').innerText = rows[1]['Tiêu đề bảng']
-        document.querySelector('#object_content2').innerText = rows[1]['Nội dung bảng']
-        document.querySelector('#object_title3').innerText = rows[2]['Tiêu đề bảng']
-        document.querySelector('#object_content3').innerText = rows[2]['Nội dung bảng']
-        //   document.querySelector('#object_title4').innerText = rows[3]['Tiêu đề bảng']
-        //    document.querySelector('#object_content4').innerText = rows[3]['Nội dung bảng']
+        let items = ''
+        let i = 1
+        rows.forEach((t) => {
+            if (t.ContentAll != '') {
+                items +=
+                    `
+                <li>
+                    <p><span style="color: var(--color-main);font-weight: 600;">${i}. </span>
+                    ${t.ContentAll}</p>
+                </li>
+            `
+            }
+            vam(`#dieukien${i}`).innerHTML +=
+                `<p>${t['Cotent']}</p>`
+            i++
+        })
+        vam('#loaddieukienall').innerHTML = items
 
-        //   document.querySelectorAll('.object_wrapimg>img')[3].src = rows[3]['Hình ảnh']
     });
 
 
@@ -651,11 +644,11 @@ jQuery(document).ready(function ($) {
 fetchSheet
     .fetch({
         gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
-        wSheetName: 'ThoiGianConLai',
+        wSheetName: 'Thời gian còn lại',
     })
     .then((rows) => {
         let r = ''
-        const targetDate = new Date(`${rows[0]['Thời gian hết hạn']}T23:59:59`).getTime();
+        const targetDate = new Date(`${rows[0]['Time']}T23:59:59`).getTime();
 
         // Update the countdown every second
         const countdown = setInterval(() => {
@@ -683,6 +676,20 @@ fetchSheet
                 document.getElementById("countdown").innerHTML = "EXPIRED";
             }
         }, 1000);
+        /* #c661412b2 */
+        vam('#c661412b2-iframe_click').addEventListener('click', () => {
+            vam('.c661412b2-background_click').setAttribute('style', 'display:flex')
+            vam('.c661412b2-iframe_click').setAttribute('style', 'display:flex')
+            var c661412b2Iframe = `<iframe class="c661412b2-iframe" src="${rows[0]['iframe']}" frameborder="0"
+                                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+            vam('.c661412b2-iframe_click').innerHTML = c661412b2Iframe
+            vam('.c661412b2-background_click').addEventListener('click', () => {
+                vam('.c661412b2-background_click').setAttribute('style', 'display:none')
+                vam('.c661412b2-iframe_click').setAttribute('style', 'display:none')
+                vam('.c661412b2-iframe').remove()
+            })
+        })
+
     });
 
 fetchSheet
@@ -716,40 +723,45 @@ fetchSheet
 fetchSheet
     .fetch({
         gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
-        wSheetName: 'Giaithuong',
+        wSheetName: 'Giải thưởng',
     })
     .then((rows) => {
-        document.querySelector('#prize_titleup').innerHTML = rows[0]['Tiêu đề']
-        document.querySelector('#prize_title').innerHTML = rows[0]['Tiêu đề']
-        rows.forEach((t) => {
-            if (t['Vòng sơ loại'] != '') {
-
-            }
-        })
-        rows.forEach((t) => {
-            if (t['Vòng chung kết'] != '') {
-
-            }
-        })
+        vam('#prize_sTitle').innerText = rows[0]['shortTitle']
+        vam('#prize_title').innerText = rows[0]['Title']
+        vam('#prize_mContent').innerText = rows[0]['Contentmain']
     });
 
 fetchSheet
     .fetch({
         gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
-        wSheetName: 'HinhThucToChuc',
+        wSheetName: 'Thông điệp',
     })
     .then((rows) => {
-        document.querySelector('#organizational_titleup').innerText = rows[0]['Tiêu đề']
-        document.querySelector('#organizational_title').innerText = rows[0]['Tiêu đề']
-        document.querySelector('#organizational_titlep').innerText = rows[0]['Tiêu đề phụ']
-        let r = ''
-        rows.forEach((t) => {
-            r += `<p style="text-indent: 10%;" class="vam_content">${t['Nội dung']}</p>`
+        let items1 = ''
+        let items2 = ''
+        vam('#scroll_sTitle').innerText = rows[0]['shortTitle']
+        vam('#scroll_title').innerText = rows[0]['Title']
+        vam('#scroll_mContent').innerText = rows[0]['Contentmain']
+        rows.forEach((T) => {
+            items1 +=
+                `
+            <div>
+            <i class="bi bi-amd"></i>
+                <p>${T.Thinking}</p>
+            </div>  
+            `
+            items2 +=
+                `
+            <div>
+            <i class="bi bi-amd"></i>
+                <p>${T.Skill}</p>
+            </div>  
+            `
         })
-        document.querySelector('#organizational_img1>img').src = rows[0]['Hình ảnh']
-        document.querySelector('#organizational_content1').innerHTML += r
+        vam('#logic').innerHTML += items1
+        vam('#skill').innerHTML += items2
     });
-
+/*
 fetchSheet
     .fetch({
         gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
@@ -794,21 +806,67 @@ fetchSheet
         document.querySelector('#tochuc_load').innerHTML += y
         document.querySelector('#truyenthong_load').innerHTML += u
         document.querySelector('#tochucc_load').innerHTML += i
-    });
+    });*/
 
 
 fetchSheet
     .fetch({
         gSheetId: '1w0ZWTWCwLovFMRhTHiYAS9yst4qptwjLRcI2GncXUjI',
-        wSheetName: 'intro',
+        wSheetName: 'Yêu cầu thiết bị',
     })
     .then((rows) => {
-        document.querySelector('#load_about').innerHTml += rows[0]['Về chúng tôi']
-        document.querySelector('#intro_title').innerText = rows[0]['Tiêu đề']
-        document.querySelector('#intro_background').src = rows[0]['background']
-        document.querySelector('#intro_link').src = rows[0]['Link tham gia']
-        document.querySelector('#intro_img').src = rows[0]['img']
-        document.querySelector('#intro_logo').src = rows[0]['logo']
+        vam('#scroll-add_sTitle').innerText = rows[0]['shortTitle']
+        vam('#scroll-add_title').innerText = rows[0]['Title']
+        vams('.device_box-nav_con').forEach((t) => {
+            t.onclick = () => {
+                if (t.getAttribute('class') != 'device_box-nav_con acc') {
+                    vam('.device_box-nav_con.acc').classList.remove('acc')
+                    t.classList.add('acc')
+                    if (t.getAttribute('index') == '1') {
+                        vam('.contentdevice').innerHTML =
+                            `<h1>Ở vòng sơ loại bảng A, B, C/C++</h1>
+                        <div style="display: flex;align-items: start;padding: 10px 0;">
+                            <div class="iconvam"></div>
+                            <p style="flex: 1;">${rows[0]['Sơ loại']}</p>
+                        </div>
+                        <div style="display: flex;align-items: start;padding: 10px 0;">
+                            <div class="iconvam"></div>
+                            <p style="flex: 1;">${rows[1]['Sơ loại']}</p>
+                        </div>
+                        <div style="display: flex;align-items: start;padding: 10px 0;">
+                            <div class="iconvam"></div>
+                            <p style="flex: 1;">${rows[2]['Sơ loại']}</p>
+                        </div>`
+                        vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1bvUZ4Is10OCRN9zzO1zO_t4-xvk1Omnm'
+                    }
+                    else if (t.getAttribute('index') == '2') {
+                        vam('.contentdevice').innerHTML =
+                            `<div style="text-align: justify;" class="contentdevice">
+                        <h1>Ở vòng chung kết bảng A, B và C</h1>
+                        <div style="display: flex;align-items: start;padding: 10px 0;">
+                            <div class="iconvam"></div>
+                            <p style="flex: 1;">${rows[0]['Chung kết']}</p>
+                        </div>
+                        <div style="display: flex;align-items: start;padding: 10px 0;">
+                            <div class="iconvam"></div>
+                            <p style="flex: 1;">${rows[1]['Chung kết']}</p>
+                        </div>
+                        <div style="display: flex;align-items: start;padding: 10px 0;">
+                            <div class="iconvam"></div>
+                            <p style="flex: 1;">${rows[2]['Chung kết']}</p>
+                        </div>
+                        <h1>Ở vòng chung kết bảng C++ đặc biệt</h1>
+                        <div style="display: flex;align-items: start;padding: 10px 0;">
+                            <div class="iconvam"></div>
+                            <p style="flex: 1;">${rows[0]['Chung kết C++']}</p>
+                        </div>
+                    </div>`
+                        vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1LfWQ62-xlm6t0TZHMjSk2cWPOrp-x3sS'
+                    }
+                }
+            }
+        })
+
     });
 
 /* test */
