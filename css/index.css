@@ -1609,6 +1609,8 @@ body {
     min-height: 500px;
 }
 
+
+
 .device_box-content-wrap {
     width: calc(100% - 300px);
 }
@@ -2932,6 +2934,10 @@ body {
 }
 
 @media (max-width: 640px) {
+    #prive_mb {
+        padding-bottom: 150px !important;
+    }
+
     .scroll-thongdiep_title>h1 {
         font-size: 24px;
     }
