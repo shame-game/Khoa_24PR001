@@ -1619,7 +1619,7 @@ body {
     width: 300px;
     right: -14px;
     height: calc(100% + 15px);
-    top: -14px;
+    top: -16px;
     width: 300px;
     clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
     background-color: var(--color-text);
@@ -1669,12 +1669,13 @@ body {
     display: flex;
     align-items: end;
     justify-content: center;
+    background-color: white;
 }
 
 .device_box-img>img {
     object-fit: cover;
     object-position: center;
-    width: 100%;
+    height: 100%;
 }
 
 /* timeline */

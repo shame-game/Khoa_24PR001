@@ -844,7 +844,7 @@ fetchSheet
                             <div class="iconvam"></div>
                             <p style="flex: 1;">${rows[2]['Sơ loại']}</p>
                         </div>`
-                        vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1u_YZXy0hxGT0UQ9-Ov1vwC0_4h8uIXz3'
+                        vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1jGKEoVVhylTpKoFLWk4gSzxQMm3kBm5V'
                     }
                     else if (t.getAttribute('index') == '2') {
                         vam('.contentdevice').innerHTML =
@@ -868,7 +868,7 @@ fetchSheet
                             <p style="flex: 1;">${rows[0]['Chung kết C++']}</p>
                         </div>
                     </div>`
-                        vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1u_YZXy0hxGT0UQ9-Ov1vwC0_4h8uIXz3'
+                        vam('.device_box-img>img').src = 'https://lh3.googleusercontent.com/d/1jGKEoVVhylTpKoFLWk4gSzxQMm3kBm5V'
                     }
                 }
             }
