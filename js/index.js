@@ -500,6 +500,7 @@ window.onload = () => {
     vam('#intro_content').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     vam('#intro_logo').setAttribute('style', 'animation: introbanner .8s 1.3s linear forwards;')
     vam('#intro_anim').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
+    vam('#itro-spanns').setAttribute('style', 'animation: introbanner .8s 1.5s linear forwards;')
     setTimeout(() => {
         vam('body').setAttribute('style', 'overflow:auto')
     }, 2000)
