@@ -10,44 +10,6 @@
     --color-yellow: #f4c33c;
 }
 
-#tochuc_load {
-    margin: 16px 0;
-    margin-top: 32px;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -ms-align-items: center;
-    background-color: #a1bfff;
-    border: unset;
-    border-radius: 10px;
-}
-
-#tochuc_load::after {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    background-color: white;
-    border-radius: 8px;
-    z-index: 1;
-}
-
-#tochuc_load::before {
-    content: '';
-    position: absolute;
-    width: 30%;
-    height: 340%;
-    background-image: linear-gradient(230deg, #a1bfff, #0051ff);
-    animation: ani 5s linear infinite;
-}
-
-#tochuc_load>div {
-    position: relative;
-    z-index: 2;
-    aspect-ratio: 1/1;
-}
 
 .glowing-border {
     border: 3px solid #00a4e3;
@@ -1152,6 +1114,18 @@ body {
 
 }
 
+#linkg {
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+#scroll #scroll_title {
+    font-size: 32px;
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: center;
+}
+
 /*/ scroll */
 
 /* thông điệp*/
@@ -1374,7 +1348,10 @@ body {
 
 
 .dieukien_bottom {
-    padding-bottom: 50px;
+    padding: 30px;
+    border: 1px solid var(--color-main);
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .dieukien_bottom>div {
@@ -1384,7 +1361,7 @@ body {
 }
 
 .dieukien_bottom>div>div {
-    border-radius: 16px;
+    border-radius: 8px;
     background-color: white;
     border: 3px solid var(--color-main);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -1532,13 +1509,14 @@ body {
 
 /*/*/
 
-.dieukien_bottom button {
+.dieukien_bottom button,
+.dieukien_bottom .dkthamgia {
     margin: 16px;
     transition: all .3s linear;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 25px;
+    padding: 8px;
     background-color: white;
     color: var(--color-text);
     border: 3px solid var(--color-text);
@@ -1547,6 +1525,20 @@ body {
     position: relative;
 }
 
+.dieukien_bottom .dkthamgia {
+    font-size: 13px;
+}
+
+.dieukien_bottom .dkthamgia:hover {
+    background-color: var(--color-text);
+    color: white;
+}
+
+#desoloai {
+    color: var(--color-text);
+    cursor: pointer;
+    font-weight: 600;
+}
 
 .dieukien_bottom button:hover {
     background-color: var(--color-text);
@@ -1554,7 +1546,7 @@ body {
 }
 
 .dieukien_bottom a {
-    font-size: 16px;
+    font-size: 13px;
     font-family: "Roboto", sans-serif !important;
 }
 
@@ -1720,12 +1712,18 @@ body {
 }
 
 /* timeline */
+.donvi_load-wrap {
+    transition: all .3s linear;
+}
 
+.donvi_load-wrap:hover {
+    transform: scale(1.05);
+}
 
 #itro-spanns {
     color: white;
-    padding: 20px 0;
-    font-size: 22px;
+    padding: 10px 0;
+    font-size: 24px;
     font-weight: 900;
 }
 
@@ -2878,6 +2876,10 @@ body {
 }
 
 @media (max-width: 982px) {
+    #itro-spanns {
+        font-size: 18px;
+    }
+
     .hiddenlogo {
         display: none;
     }
@@ -2964,6 +2966,8 @@ body {
 }
 
 @media (max-width:778px) {
+
+
     .device_box-nav {
         width: 100%;
         display: flex;
@@ -2980,6 +2984,18 @@ body {
 }
 
 @media (max-width: 640px) {
+    .header1412a1 {
+        display: none;
+    }
+
+    #header_logo {
+        display: none;
+    }
+
+    #intro_logo {
+        width: 40%;
+    }
+
     #prive_mb {
         padding-bottom: 150px !important;
     }
@@ -3023,6 +3039,11 @@ body {
         flex-direction: column;
     }
 
+    #itro-spanns {
+        font-size: 14px;
+        text-align: center;
+    }
+
     .contentdevice p {
         font-size: 16px;
     }
@@ -3058,6 +3079,40 @@ body {
 }
 
 @media (max-width:400px) {
+    .name-ct {
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    #intro_title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #chuthichmb>span {
+        font-size: 12px;
+    }
+
+    #d76,
+    #cdtmb {
+        font-size: 12px;
+        text-align: center;
+    }
+
+
+    .p67>strong {
+        font-size: 20px !important;
+    }
+
+    .p67 {
+        font-size: 20px !important;
+    }
+
+    .p67>img {
+        width: 50px !important;
+    }
+
+
     .giaithuong h3 {
         font-size: 12px !important;
     }
@@ -3068,5 +3123,27 @@ body {
 
     .chuthichall {
         font-size: 12px;
+    }
+
+    #intro_content {
+        font-size: 13px;
+        text-align: justify;
+    }
+
+    #intro_anim {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 90%;
+    }
+
+    #intro .vam_button1 {
+        font-size: 14px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #intro_logo {
+        width: 60%;
     }
 }

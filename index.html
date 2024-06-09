@@ -10,6 +10,10 @@
     <!-- Front text-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- meta -->
+    <meta name="description" content="ĐẤU TRƯỜNG AI ĐẦU TIÊN TẠI VN SỬ DỤNG ROBOT HÌNH NGƯỜI">
+    <meta property="og:image" content="./photo/Thiết kế chưa có tên.png">
+    <meta property="og:description" content="ĐẤU TRƯỜNG AI ĐẦU TIÊN TẠI VN SỬ DỤNG ROBOT HÌNH NGƯỜI">
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -90,6 +94,8 @@
             flex-direction: column;
             align-items: center;margin: 0 auto;">
                 <img id="intro_logo">
+                <div id="itro-spanns">“ĐẤU TRƯỜNG AI ĐẦU TIÊN TẠI VN SỬ DỤNG ROBOT HÌNH
+                    NGƯỜI”</div>
                 <h3 style="margin-top: 16px;" class="vam_title2" id="intro_title"></h3>
 
                 <p class="vam_content" id="intro_content"></p>
@@ -99,8 +105,7 @@
                     <button class="vam_button1" id="intro_down"><a onclick="downloadZip()">Xem thể lệ cuộc
                             thi</a></button>
                 </div>
-                <div id="itro-spanns">“ĐẤU TRƯỜNG AI ĐẦU TIÊN TẠI VN SỬ DỤNG ROBOT HÌNH
-                    NGƯỜI”</div>
+
             </div>
         </div>
     </section>
@@ -165,6 +170,17 @@
                 <ul id="loaddieukienall"></ul>
             </div>
             <div class="row dieukien_bottom">
+                <div class="col-12">
+                    <h1 style="color: var(--color-h1);font-size: 18px;">Cuộc thi được diễn ra với 2 vòng thi là vòng
+                        loại và chung kết,
+                        với vòng thi vòng loại các bảng
+                        đều có chung đề thi <span id="desoloai" style="color: var(--color-text);">(đề thi và bảng điểm
+                            vòng sơ
+                            loại)</span>. Đối
+                        với vòng chung kết sẽ đề thi và bảng
+                        điểm riêng
+                        biệt cho từng bảng, thông tin chi tiết như sau:</h1>
+                </div>
                 <div class="col-xxl-3 col-lg-6 col-12">
                     <div>
                         <div id="dieukien1">
@@ -174,9 +190,17 @@
                             </div>
                         </div>
                         <div style="width: 100%;">
-                            <button class="dkthamgia" index="1" style="width: 90%;">
-                                <a style="text-align: center;">Đăng ký ngay</a>
-                            </button>
+                            <div style="display: flex;margin-bottom: -20px;">
+                                <button class="showdetail" index="1" style="width: 90%;margin-right: 5px;">
+                                    <a style="text-align: center;">Đề thi</a>
+                                </button>
+                                <button class="showpoin" index="1" style="width: 90%;margin-left:5px ;">
+                                    <a style="text-align: center;">Bảng điểm</a>
+                                </button>
+                            </div>
+                            <a class="dkthamgia" target="_blank" index="1" style="width: 90%;">
+                                Đăng ký ngay
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -189,9 +213,17 @@
                             </div>
                         </div>
                         <div style="width: 100%;">
-                            <button class="dkthamgia" index="2" style="width: 90%;">
-                                <a style="text-align: center;" target="_blank">Đăng ký ngay</a>
-                            </button>
+                            <div style="display: flex;margin-bottom: -20px;">
+                                <button class="showdetail" index="2" style="width: 90%;margin-right: 5px;">
+                                    <a style="text-align: center;">Đề thi</a>
+                                </button>
+                                <button class="showpoin" index="2" style="width: 90%;margin-left:5px ;">
+                                    <a style="text-align: center;">Bảng điểm</a>
+                                </button>
+                            </div>
+                            <a class="dkthamgia" index="2" style="width: 90%;" target="_blank">
+                                Đăng ký ngay
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -204,9 +236,18 @@
                             </div>
                         </div>
                         <div style="width: 100%;">
-                            <button class="dkthamgia" index="3" style="width: 90%;">
-                                <a style="text-align: center;" target="_blank">Đăng ký ngay</a>
-                            </button>
+                            <div style="display: flex;margin-bottom: -20px;">
+                                <button class="showdetail" index="3" style="width: 90%;margin-right: 5px;">
+                                    <a style="text-align: center;">Đề thi</a>
+                                </button>
+                                <button class="showpoin" index="3" style="width: 90%;margin-left:5px ;">
+                                    <a style="text-align: center;">Bảng điểm</a>
+                                </button>
+                            </div>
+                            <a class="dkthamgia" index="3" style="width: 90%;" target="_blank">
+                                Đăng ký ngay
+                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -218,10 +259,19 @@
                                 <img src="https://lh3.googleusercontent.com/d/1XbxlzwhGFNfxr0uCilYn61eIjzSUG6eG">
                             </div>
                         </div>
+
                         <div style="width: 100%;">
-                            <button class="dkthamgia" index="4" style="width: 90%;">
-                                <a style="text-align: center;" target="_blank">Đăng ký ngay</a>
-                            </button>
+                            <div style="display: flex;margin-bottom: -20px;">
+                                <button class="showdetail" index="4" style="width: 90%;margin-right: 5px;">
+                                    <a style="text-align: center;">Đề thi</a>
+                                </button>
+                                <button class="showpoin" index="4" style="width: 90%;margin-left:5px ;">
+                                    <a style="text-align: center;">Bảng điểm</a>
+                                </button>
+                            </div>
+                            <a class="dkthamgia" index="4" style="width: 90%;" target="_blank">
+                                Đăng ký ngay
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -292,6 +342,12 @@
                                         với các bộ giáo cụ AI Robotics của UBTECH, ngoài những thiết bị gây ô nhiễm môi
                                         trường và có hại cho sức khỏe hoặc an toàn xã hội.</p>
                                 </div>
+                                <div style="display: flex;align-items: start;padding: 10px 0;gap: 10px;">
+                                    <span style="color:var(--color-text)">* </span>
+                                    <p style="flex: 1;color:var(--color-text);    cursor: pointer;"> Xem thêm về thiết
+                                        bị
+                                        dự thi</p>
+                                </div>`
                             </div>
                         </div>
                         <div class="device_box-img">
@@ -338,26 +394,27 @@
                         <div class="name-vong">
                             <img src="https://lh3.googleusercontent.com/d/1SGXoMet8x60Z0dXNFsBc07fj8YJHwHHb" alt="">
                             <p>Vòng sơ loại</p>
-                            <span style="font-weight: 600;">*Giải thưởng dành cho bảng A, B, C/C++</span>
+                            <span id="d76" style="font-weight: 600;">*Giải thưởng dành cho bảng A, B, C/C++</span>
                         </div>
                         <div class="giaithuong" style="width: 100%;">
                             <div style="display: flex;flex-direction: column;align-items: center;padding: 16px;">
-                                <span style="font-size: 32px;"> <strong style="font-size: 34px;">03</strong> Giải
+                                <span class="p67" style="font-size: 32px;"> <strong style="font-size: 34px;">03</strong>
+                                    Giải
                                     Nhất</span>
-                                <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                <p class="chuthichall">- Mỗi giải -</p>
                                 <h3 style="font-size: 34px">30.000.000 VNĐ</h3>
                             </div>
                             <div style="display: flex;border-top: 2px solid var(--color-text);width: 100%;">
                                 <div
                                     style="flex: 1;padding:5px 16px;;display: flex;border-right: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
                                     <span><strong style="font-size: 22px;">03</strong> Giải Nhì</span>
-                                    <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                    <p class="chuthichall">- Mỗi giải -</p>
                                     <h3 style="font-size: 18px;">10.000.000 VNĐ</h3>
                                 </div>
                                 <div
                                     style="flex: 1;padding:5px 16px;;display: flex;border-left: .5px solid var(--color-text);display: flex;flex-direction: column;align-items: center;">
                                     <span><strong style="font-size: 22px;">06</strong> giải ba</span>
-                                    <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                    <p class="chuthichall">- Mỗi giải -</p>
                                     <h3 style="font-size: 18px;">2.000.000 VNĐ</h3>
                                 </div>
                             </div>
@@ -390,25 +447,26 @@
                                 <div class="giaithuong v" style="width: 100%;">
                                     <div
                                         style="display: flex;flex-direction: column;align-items: center;padding: 16px;">
-                                        <span style="font-size: 32px;"><img style="width: 70px;height: auto;"
+                                        <span class="p67" style="font-size: 32px;"><img
+                                                style="width: 70px;height: auto;"
                                                 src="https://lh3.googleusercontent.com/d/1OA6q11fBBDuW55hvsmZmCIY-Uu670YnS"
                                                 alt=""> <strong style="font-size: 34px;">03</strong>
                                             Giải
                                             Nhất</span>
-                                        <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                        <p class="chuthichall">- Mỗi giải -</p>
                                         <h3 style="font-size: 34px">60.000.000 VNĐ</h3>
                                     </div>
                                     <div style="display: flex;border-top: 2px solid var(--color-yellow);width: 100%;">
                                         <div
                                             style="flex: 1;padding:5px 16px;;display: flex;border-right: .5px solid var(--color-yellow);display: flex;flex-direction: column;align-items: center;">
                                             <span><strong style="font-size: 22px;">03</strong> Giải Nhì</span>
-                                            <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                            <p class="chuthichall">- Mỗi giải -</p>
                                             <h3 style="font-size: 18px;">10.000.000 VNĐ</h3>
                                         </div>
                                         <div
                                             style="flex: 1;padding:5px 16px;;display: flex;border-left: .5px solid var(--color-yellow);display: flex;flex-direction: column;align-items: center;">
                                             <span><strong style="font-size: 22px;">06</strong> giải ba</span>
-                                            <p class="chuthichall">- Mỗi giải trị giá -</p>
+                                            <p class="chuthichall">- Mỗi giải -</p>
                                             <h3 style="font-size: 18px;">5.000.000 VNĐ</h3>
                                         </div>
                                     </div>
@@ -425,13 +483,15 @@
                                     <div id="prive_mb"
                                         style="display: flex;flex-direction: column;align-items: center;padding: 16px;">
                                         <span id="cdtmb">*Giải thưởng dành cho bảng C++ Đặc Biệt</span>
-                                        <span style="font-size: 32px;"><img style="width: 70px;height: auto;"
+                                        <span class="p67" style="font-size: 32px;"><img
+                                                style="width: 70px;height: auto;"
                                                 src="https://lh3.googleusercontent.com/d/1s8c5ZHa1XPI6JfrFvEH3qlMX3pdS9efi"
                                                 alt=""> <strong style="font-size: 34px;margin-left: -10px;">01</strong>
                                             Giải
                                             Đặc Biệt</span>
-                                        <p class="chuthichall">- Robot AI module - </p>
-                                        <h3 style="font-size: 34px">BỘ ROBOT AI UGOT</h3>
+                                        <p class="chuthichall">- Học bổng đại học VLU trị giá - </p>
+                                        <h3 style="font-size: 34px">100.000.000 VNĐ</h3>
+                                        <p style="margin-top: 10px;">và bộ Robot AI module UGOT</p>
                                     </div>
                                 </div>
                             </div>
@@ -451,9 +511,22 @@
         </div>
         <div class="vam_wrap" style="padding: 30px 0;">
             <div class="col-lg-12" style="padding: 0 10px;">
-                <div style="height: 100%;border: 3px solid var(--color-yellow);padding: 30px;" class="glowing-border">
+                <div style="height: 100%;border: 3px solid var(--color-yellow);padding: 10px 20px;"
+                    class="glowing-border">
                     <p>- Ngoài ra, các đội thi còn nhận được giấy chứng nhận tham gia cuộc thi và nhiều quà tặng khác từ
                         BTC và nhà tài trợ.</p>
+                    <button id="Detail_Prize" style="margin: 15px auto;
+                    transition: all .3s linear;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 5px 20px;
+                    background-color: white;
+                    color: var(--color-text);
+                    border: 3px solid var(--color-text);
+                    font-size: 20px;
+                    border-radius: 8px;
+                    position: relative;">Xem chi tiết quà tặng</button>
                 </div>
             </div>
         </div>
@@ -461,7 +534,7 @@
     <section id="timeline" style="padding: 50px 0">
         <div class="vam_wrap">
             <img id="timeline_img" style="width: 100%;"
-                src="https://lh3.googleusercontent.com/d/1Ml4BqTa9sQdP5FucLST6N8jmbwyhyR5F" alt="">
+                src="https://lh3.googleusercontent.com/d/19ApBtk4b9UvyiSieiF_A9widVbipGXm0" alt="">
         </div>
     </section>
     <section id="c661412b2" data-scroll-section>
@@ -508,14 +581,14 @@
             <h3 class="title-non" style="text-align: center;color: var(--color-text);padding-top: 40px;">Đơn vị chỉ đạo
             </h3>
             <div id="chidao_load" style="padding: 50px;display: flex;flex-wrap: wrap;gap: .6%;justify-content: center;">
-                <div class="donvi_load-wrap">
-                    <img style="width:100%"
+                <a href="http://www.ioit.ac.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:120%"
                         src="https://lh3.googleusercontent.com/d/1LK7mOK-47mcdy2TNYpcJ_12p6BgdIqRg" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:70%"
+                </a>
+                <a href="http://vnies.edu.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:85%"
                         src="https://lh3.googleusercontent.com/d/1mewY3QTVsRRrVviVBTiifSR3cnBMiiMp" />
-                </div>
+                </a>
             </div>
         </div>
         <div class="vam_wrap2">
@@ -524,47 +597,54 @@
                 và tài trợ</h3>
             <div id="donghanh_load"
                 style="padding: 50px;display: flex;flex-wrap: wrap;gap: .6%;justify-content: center;">
-                <div class="donvi_load-wrap">
-                    <img style="width:70%"
-                        src="https://lh3.googleusercontent.com/d/15E4Rk2gUI0RSFdkkKJ8VqSfa0OtVuuzj" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:150%"
-                        src="https://lh3.googleusercontent.com/d/1DDI6TOqrKJdvH4dnz8qEcVSDoBq1EIPV" />
-                </div>
-                <div class="donvi_load-wrap" style="justify-content: end;">
-                    <img style="width:70%"
-                        src="https://lh3.googleusercontent.com/d/1rOgV9bhOFLBBYzgirVUVAajp5mPKd7TP" />
-                </div>
-
-                <div class="donvi_load-wrap">
-                    <img style="width:50%"
-                        src="https://lh3.googleusercontent.com/d/15HHGz0OgAFDHr3G6XVtmWqlp5DzZeRWt" />
-                </div>
-                <div class="donvi_load-wrap">
+                <a href="https://www.dafc.com.vn/vi/" target="_blank" class="donvi_load-wrap">
                     <img style="width:80%"
-                        src="https://lh3.googleusercontent.com/d/10vHKsZ4UCmECQ4duhDdNQPJbVw2mHfCZ" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:60%"
-                        src="https://lh3.googleusercontent.com/d/1lD7Vbw52UpUtey5f9vgYOOHPb0neTb7u" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:60%"
-                        src="https://lh3.googleusercontent.com/d/1ihvi9OHptmNQniafQf-JDu-i9XV7U1Af" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:70%;object-fit: cover;"
-                        src="https://lh3.googleusercontent.com/d/1weTzQ03jQxUqHmogEK0Bl2y1XT9YeFSe" />
-                </div>
-                <div class="donvi_load-wrap">
+                        src="https://lh3.googleusercontent.com/d/15E4Rk2gUI0RSFdkkKJ8VqSfa0OtVuuzj" />
+                </a>
+                <a href="https://ipptravelretail.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:160%"
+                        src="https://lh3.googleusercontent.com/d/1DDI6TOqrKJdvH4dnz8qEcVSDoBq1EIPV" />
+                </a>
+                <a href="https://burgerking.vn/" target="_blank" class="donvi_load-wrap">
                     <img style="width:50%"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Burger_King_2020.svg/550px-Burger_King_2020.svg.png" />
+                </a>
+                <a href="https://dominos.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:100%" src="https://1000logos.net/wp-content/uploads/2023/04/Dominos-logo.png" />
+                </a>
+                <a href="https://popeyes.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:80%" src="https://logowik.com/content/uploads/images/popeyes-new1826.jpg" />
+                </a>
+
+
+                <a href="https://vsss.edu.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:60%"
+                        src="https://lh3.googleusercontent.com/d/15HHGz0OgAFDHr3G6XVtmWqlp5DzZeRWt" />
+                </a>
+                <a href="https://ispschools.edu.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:90%"
+                        src="https://lh3.googleusercontent.com/d/10vHKsZ4UCmECQ4duhDdNQPJbVw2mHfCZ" />
+                </a>
+                <a href="https://kapla.edu.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:80%"
+                        src="https://lh3.googleusercontent.com/d/1lD7Vbw52UpUtey5f9vgYOOHPb0neTb7u" />
+                </a>
+                <a href="https://ngothoinhiem.edu.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:80%"
+                        src="https://lh3.googleusercontent.com/d/1ihvi9OHptmNQniafQf-JDu-i9XV7U1Af" />
+                </a>
+                <a href="https://kidkul.com/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:80%;object-fit: cover;"
+                        src="https://lh3.googleusercontent.com/d/1weTzQ03jQxUqHmogEK0Bl2y1XT9YeFSe" />
+                </a>
+                <a href="https://eduten.com/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:65%"
                         src="https://lh3.googleusercontent.com/d/1-_fAH2PETHvktG9ekVHA55ux2HQ0ITyS" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:100%"
+                </a>
+                <a href="https://steam.goldena.edu.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:140%"
                         src="https://lh3.googleusercontent.com/d/1NHfWpp0N7rskl9y2PeHXgL5lG5CwUASS" />
-                </div>
+                </a>
             </div>
         </div>
         <div class="vam_wrap2">
@@ -576,42 +656,43 @@
                     <img style="width:100%;aspect-ratio: 1/1;"
                         src="https://st.quantrimang.com/photos/image/2024/03/26/white-wallpaper-1.jpg" />
                 </div>
-                <div class="donvi_load-wrap" style="justify-content: start;">
+                <a href="https://ippgroup.vn/vi/kinh-doanh/ipp-technology" target="_blank" class="donvi_load-wrap"
+                    style="justify-content: start;">
                     <img style="width:120%"
                         src="https://lh3.googleusercontent.com/d/1VuiqvBCVAYz0vvFh7oENwAo08moqJnPD" />
-                </div>
-                <div class="donvi_load-wrap">
+                </a>
+                <a href="https://www.facebook.com/aicenter.itp/?locale=vi_VN" target="_blank" class="donvi_load-wrap">
                     <img style="width:80%"
                         src="https://lh3.googleusercontent.com/d/1HPAkLmWQIKVdfsy34Ro0usY9x9ULtZj9" />
-                </div>
-                <div class="donvi_load-wrap">
+                </a>
+                <a href="https://ubtechvietnam.com/" target="_blank" class="donvi_load-wrap">
                     <img style="width:100%"
                         src="https://lh3.googleusercontent.com/d/1OQ5zDVNzcbx9tk6c2qpT3osg51q0mONE" />
-                </div>
+                </a>
                 <div class="donvi_load-wrap hiddenlogo">
                     <img style="width:100%;aspect-ratio: 1/1;"
                         src="https://st.quantrimang.com/photos/image/2024/03/26/white-wallpaper-1.jpg" />
                 </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:60%"
-                        src="https://lh3.googleusercontent.com/d/1qdPpyoBEl4sCVF0e4USMqGoO3wkacFfc" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:50%;object-fit: cover;"
-                        src="https://lh3.googleusercontent.com/d/1-QWnNnM2_tMFl_cH3GPlJJmX6ep0bXix" />
-                </div>
-                <div class="donvi_load-wrap">
+                <a href="https://lhu.edu.vn/" target="_blank" class="donvi_load-wrap">
                     <img style="width:80%"
+                        src="https://lh3.googleusercontent.com/d/1qdPpyoBEl4sCVF0e4USMqGoO3wkacFfc" />
+                </a>
+                <a href="https://dlu.edu.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:60%;object-fit: cover;"
+                        src="https://lh3.googleusercontent.com/d/1-QWnNnM2_tMFl_cH3GPlJJmX6ep0bXix" />
+                </a>
+                <a href="https://www.vlu.edu.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:100%"
                         src="https://lh3.googleusercontent.com/d/1FMaQ3VWCNzxNwHrX09FyY-J9OvkYIL2g" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:70%"
+                </a>
+                <a href="https://www.hcmue.edu.vn/vi/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:80%"
                         src="https://lh3.googleusercontent.com/d/1jgoFUrlWgw5pkPO-f4dM8U6bGI6mvxsK" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:50%"
+                </a>
+                <a href="https://doanthanhnien.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:60%"
                         src="https://lh3.googleusercontent.com/d/1Qd3h8PQOHImv1aNsAT7-Dq6n2E1-Btuq" />
-                </div>
+                </a>
             </div>
         </div>
         <div class="vam_wrap2">
@@ -620,14 +701,14 @@
             </h3>
             <div id="truyenthong_load"
                 style="padding: 50px;display: flex;flex-wrap: wrap;gap: .6%;justify-content: center;">
-                <div class="donvi_load-wrap">
-                    <img style="width:50%"
+                <a href="https://is.uel.edu.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:60%"
                         src="https://lh3.googleusercontent.com/d/1DLZBM7JL_lkrj1Rvxs1Q3j8Hev1KjIBu" />
-                </div>
-                <div class="donvi_load-wrap">
-                    <img style="width:50%"
+                </a>
+                <a href="https://doanthanhnien.vn/" target="_blank" class="donvi_load-wrap">
+                    <img style="width:60%"
                         src="https://lh3.googleusercontent.com/d/1Qd3h8PQOHImv1aNsAT7-Dq6n2E1-Btuq" />
-                </div>
+                </a>
             </div>
         </div>
     </section>
