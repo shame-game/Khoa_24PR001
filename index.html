@@ -227,8 +227,8 @@
             t.onclick = () => {
                 document.querySelector('#load').setAttribute('style', 'display:block')
                 v = t.getAttribute('data-vl')
-                let url = `https://script.google.com/macros/s/AKfycbyNOujcli6lo2U4-dpkgpIalqc7LdPVR5OdPf2ZyyWH2e_Z19LfxsqUSFMHDo3JaJmy6g/exec?
-                Class=${document.querySelector('#classN').value}&Feeling=${v}&Comment=${document.querySelector('#cmt').value}`
+                console.log(document.querySelector('#classN').value);
+                let url = `https://script.google.com/macros/s/AKfycbx1P00LA92YItBHcLEJRG77Tqa-hnpNAJvNIhZMbd-S8m1WwrLICXe5yIquxs5CbsvP5A/exec?ClassN=${document.querySelector('#classN').value}&Feeling=${v}&Comment=${document.querySelector('#cmt').value}`
                 fetch(url, { method: 'Get' })
                     .then(response => response.json())
                     .then((data) => {
