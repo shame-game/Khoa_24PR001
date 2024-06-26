@@ -227,30 +227,37 @@
     position: fixed;
     width: max-content;
     height: max-content;
-    padding: 9px 16px;
+    padding: 11px 25px;
     background-color: var(--color-main);
     border-radius: 5px;
-    bottom: 16px;
-    right: 16px;
+    bottom: 32px;
+    font-size: 20px;
+    right: 32px;
     border: none;
     color: white;
     font-weight: 600;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
     z-index: 999;
     animation: submit .8s linear infinite;
 }
 
 @keyframes submit {
     0% {
+        border: thin solid rgba(4, 0, 255, 0.25);
         transform: scale(.96);
+        box-shadow: rgba(4, 0, 255, 0.25) 0px 54px 55px, rgba(30, 0, 255, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
 
     50% {
+        border: thin solid rgba(255, 0, 0, 0.25);
         transform: scale(1.04);
+        box-shadow: rgba(255, 0, 0, 0.25) 0px 54px 55px, rgba(255, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
 
     100% {
+        border: thin solid rgba(4, 0, 255, 0.25);
         transform: scale(.96);
+        box-shadow: rgba(4, 0, 255, 0.25) 0px 54px 55px, rgba(30, 0, 255, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
 }
 
